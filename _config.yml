@@ -1,1 +1,11 @@
 remote_theme: pmarsceill/just-the-docs
+
+title: A comprehensive guide to REST-for-Physics
+description: First steps with REST
+baseurl: "/" # the subpath of your site, e.g. /blog
+
+permalink: pretty
+
+exclude: ["README.md", "Rakefile" , "docs/tests/" ]
+
+logo: "/assets/images/RESTlogo.png"
