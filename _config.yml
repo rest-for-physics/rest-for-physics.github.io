@@ -1,7 +1,7 @@
 remote_theme: pmarsceill/just-the-docs
 
-#title: A comprehensive guide to REST-for-Physics
-#description: First steps with REST
+title: REST-for-Physics
+description: A comprehensive guide
 #baseurl: "/" # the subpath of your site, e.g. /blog
 
 #permalink: pretty
