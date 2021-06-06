@@ -9,3 +9,5 @@ permalink: pretty
 exclude: ["README.md", "Rakefile" , "docs/tests/" ]
 
 logo: "/assets/images/RESTlogoFull.png"
+
+color_scheme: dark
