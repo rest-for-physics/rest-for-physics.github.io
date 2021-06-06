@@ -16,6 +16,4 @@ The REST Framework provides additionally different interfaces to **browse data**
 Other objects included in the framework will help to add unit definitions, `REST_Units`, define physical constants `REST_Physics`, or provide methods to help on text formatting `TRestStringHelper` or define output styles, `TRestStringOutput`.
 
 
-[**prev**](index.md)
-[**contents**](index.md)
 [**next**](installing.md)

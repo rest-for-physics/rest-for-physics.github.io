@@ -6,8 +6,8 @@ nav_exclude: true
 
 ## Contents
 
-[Introduction](introduction.md)    
-[2 Installing REST](2-installing-rest.md)    
+[Introduction](index.md)    
+[Installing REST](installing.md)    
 &emsp;[2.1 Trouble shooting](2-installing-rest.md#trouble-shooting)  
 [3 Getting Started](3-getting-started.md)  
 &emsp;[3.1 Save a metadata file](3-getting-started.md#save-a-metadata-file)  

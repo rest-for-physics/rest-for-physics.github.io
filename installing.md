@@ -285,6 +285,5 @@ If this happens when launching restManager, this may be a problem of ROOT librar
 We found that in some platform the ROOT binary are using unmatched version of interface of some system library. 
 Try to complie ROOT manually, or change another ROOT binary distribution.
 
-[**prev**](introduction.md)
-[**contents**](contents.md)
+[**prev**](index.md)
 [**next**](getting-started.md)
