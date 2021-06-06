@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 404
+title: contents
 nav_exclude: true
 ---
 
