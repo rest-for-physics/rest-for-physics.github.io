@@ -8,6 +8,6 @@ description: A comprehensive guide
 
 #exclude: ["README.md", "Rakefile" , "docs/tests/" ]
 
-logo: "/assets/images/RESTlogoFull.png"
+logo: "/assets/images/RESTlogo.png"
 
-color_scheme: dark
+#color_scheme: dark
