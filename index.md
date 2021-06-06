@@ -1,6 +1,6 @@
 ## Contents
 
-[1 Introduction](1-introduction.md)    
+[1 Introduction](introduction.md)    
 [2 Installing REST](2-installing-rest.md)    
 &emsp;[2.1 Trouble shooting](2-installing-rest.md#trouble-shooting)  
 [3 Getting Started](3-getting-started.md)  
