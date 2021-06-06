@@ -3,6 +3,16 @@ layout: default
 title: Using REST
 nav_order: 50
 ---
+# Using REST
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 REST in all provides two main executables, several ROOT scripts, several alias calling the scripts, plus a shell
 script containing REST system infomation. 
