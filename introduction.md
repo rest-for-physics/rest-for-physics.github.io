@@ -15,16 +15,7 @@ i.e. the **specific** resulting `TRestEvent` output, the `TRestAnalysisTree`, an
 The REST Framework provides additionally different interfaces to **browse data**, `TRestBrowser`, and to **plot data**, `TRestAnalysisPlot`, by accessing `TRestEvent` and `TRestAnalysisTree` ROOT-based drawing methods.
 Other objects included in the framework will help to add unit definitions, `REST_Units`, define physical constants `REST_Physics`, or provide methods to help on text formatting `TRestStringHelper` or define output styles, `TRestStringOutput`.
 
-History of developments:
 
->2014-Jun: First concept. As part of conceptualization of previous REST code (REST v2)  
-         Igor G. Irastorza  
-
-
->2017-Aug: Major change to xml reading and program running strategy  
-         Kaixiang Ni  
-
-
-[**prev**](0-contents.md)
-[**contents**](0-contents.md)
-[**next**](2-installing-rest.md)
+[**prev**](index.md)
+[**contents**](index.md)
+[**next**](installing.md)
