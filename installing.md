@@ -102,5 +102,5 @@ Loading library . libRestFramework.dylib
 Different options can be passed to the `cmake` command to personalize the REST installation. The following options are available in REST.
 
 * REST Options/features
-    * **INSTALL_PREFIX** allows to define the destination of the final REST install directory. The default value is either "REST_v2/install/" (if you haven't installed REST) or the current REST path (if you already installed REST).
+    * **INSTALL_PREFIX**: It allows to define the destination of the final REST install directory. The default value is either "REST_v2/install/" (if you haven't installed REST) or the current REST path (if you already installed REST).
     * **REST_WELCOME** (Default\: ON)\: If dissabled no message will be displayed each time we call thisREST.sh.
