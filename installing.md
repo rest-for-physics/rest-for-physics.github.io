@@ -1,10 +1,8 @@
 ---
 layout: default
-title: Installing
+title: Installing REST
 nav_order: 2
 ---
-
-## Installing REST
 
 These instructions will get you a copy of the project up and running on your local machine in your home directory.
 
@@ -126,6 +124,34 @@ Different options can be passed to the `cmake` command to personalize the REST i
     * **RESTLIB_AXION** (Default: OFF) : Enables the use of Axion event type and Axion signal calculation processes in REST.
 
 To pass the options to cmake, one need to append "-DXXX=XXX" in the cmake command, for example: `cmake .. -DREST_WELCOME=OFF -DREST_G4=ON`. Once you explicitly set an option, your option choice will become the default choice for future `cmake` executions.
+
+### Adding libraries (TODO needs revision)
+
+The concrete analysis tasks and experiment setups of REST are kept in individual libraries or packages. 
+The main framework of REST only keeps general event types and analysis algorithms. We need to install
+concrete library(package) to enable the workload, after installing REST mainbody.
+
+Both `Library` and `Package` are kind of c++ projects that based on REST. The concept is to make 
+that part of code envolve independently with REST framework, reducing the changing of REST framework.
+They are usually kept in different git repositories. `Library` provides a library with new event types and 
+analysis algorithms. `Package` provides not only libraries but also executables. They are installed to
+REST installation path.
+
+Some of the libraries/packages are provided as git submodule of REST, and can be installed together 
+with REST framework, just by adding compilation options to cmake.
+
+The following is a list of REST libraries/packages:
+
+Name         | Type       |  cmake flag (=default)  | repository
+-------------|------------|-------------------------|------------
+restMuonLib  |   library  |                         | https://gitlab.pandax.sjtu.edu.cn/pandax-iii/restmuonlib
+restDecay0   |   library  |   -DREST_DECAY0=OFF     | 
+RestAxionLib |   library  |   -DREST_AXION_LIB=OFF  | https://lfna.unizar.es/iaxo/RestAxionLib
+RestGeant4Lib|   library  |   -DREST_GEANT4_LIB=ON  | https://lfna.unizar.es/rest-development/RestGeant4Lib
+restG4       |   package  |   -DREST_G4=OFF         | 
+restP3DB     |   package  |                         | https://gitlab.pandax.sjtu.edu.cn/pandax-iii/restp3db
+restSQL      |   package  |   -DREST_SQL=ON         | https://lfna.unizar.es/rest-development/restsql
+restWeb      |   package  |                         | https://lfna.unizar.es/rest-development/restWeb
 
 #### libtbb.so.2, needed by XXX/libImt.so, not found; undefined reference to `TParticle::Sizeof3D() const'
 
