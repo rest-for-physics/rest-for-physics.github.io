@@ -8,4 +8,4 @@ permalink: pretty
 
 exclude: ["README.md", "Rakefile" , "docs/tests/" ]
 
-logo: "/assets/images/RESTlogo.png"
+logo: "/assets/images/RESTlogoFull.png"
