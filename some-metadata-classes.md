@@ -17,13 +17,13 @@ nav_order: 60
 In this section we will talk about the usage of REST metadata classes. They load useful information 
 about the experiment setup from rml config file. How to write those files is what the user should know.
 
-### TRestDetectorGas
+## TRestDetectorGas
 
 The TRestDetectorGas metadata members description can be found detailed in the TRestDetectorGas class documentation. 
 Here we provide few commands to show how to generate a new gas mixture and access its basic properties, 
 as drift velocity, electron diffusion, and typical gas coefficients.
 
-#### create TRestDetectorGas object
+### create TRestDetectorGas object
 
 TRestDetectorGas loads gas condition with the following rml section:
 
@@ -65,7 +65,7 @@ work:
 
 We can see the gas table has been loaded. The start up is much faster.
 
-#### get gas property
+### get gas property
 
 We can now access the members of TRestDetectorGas to obtain the values for the drift velocity or the 
 tranversal electron diffusion. The following command will print on screen the drift velocity.
@@ -91,7 +91,7 @@ this retrieved TRestDetectorGas class.
 
 [6] `cout << "The drift velocity at 100V/cm at 5 bar is : " << gas->GetDriftVelocity( 100 ) << endl`
 
-#### save as metadata
+### save as metadata
 
 When TRestDetectorGas is saved in root file, there will no need for calculation next time. The content of gas 
 table will be saved together, and by calling InitFromRootFile() it can be loaded again.
@@ -127,7 +127,7 @@ with "saveGas.rml" contains:
 REST will use the previous gas table to create TRestGas object. Then it will save the object in a root file 
 named "argonMixture.root". 
 
-#### use gas metadata file
+### use gas metadata file
 
 Gas metadata file can be directly used in restRoot:
 
@@ -160,14 +160,14 @@ In the thrid line we add TRestGas from the root file. This will be used by certa
 That's it. Other gas parameters and relevant information related to TRestGas can be found in the class 
 documentation.
 
-### TRestDetectorReadout
+## TRestDetectorReadout
 
 We will address two different examples following basic readout topologies. You will find a variety of 
 more complex examples at REST_v2/data/definitions/readouts.rml. More details about readout 
 construction are available at the documentation of TRestDetectorReadout class. The class TRestMetadata describes 
 detailed information on how to write RML files.
 
-#### a basic pixelated readout 
+### a basic pixelated readout 
 
 In this example we generate a readout with a single readout plane, and one pixelated readout module 
 placed inside. To achieve that each channel has a unique pixel definition.
@@ -229,7 +229,7 @@ By using restRoot one can manually instantiate this TRestDetectorReadout object 
 to directly generate the ROOT file, one needs to add these sections in TRestRun and TRestManager section, 
 and provide an "addTask" section.
 
-#### a multilayer stripped readout 
+### a multilayer stripped readout 
 
 In this example we define a stripped readout using single pixels with y-dimension much longer than x-dimension. 
 We create two readout module definitions, one for each axis, and place each readout module at a different 
@@ -292,7 +292,7 @@ For the moment, the process TRestHitsToSignalProcess is not able to process a mu
 and/or charge collection sharing between different readout planes, covering the same active volume. 
 Although few changes would be needed to adapt this process.
 
-#### readout generation and storage and recovery
+### readout generation and storage and recovery
 
 Here we assume the previous examples are defined in a file named *readouts.rml* and this file is found 
 at the working directory.
@@ -343,7 +343,7 @@ The following code recovers the TRestDetectorReadout structure
 [4] `.q`
 
 
-#### readout visualization
+### readout visualization
 
 The readout visualization is still far from optimal, but a couple of ways are available in order to verify 
 the task of readout design.
@@ -374,7 +374,7 @@ We can event draw them from bash
 ~$ `restViewReadout readouts.root pixelReadout`
 
 
-#### readout validation
+### readout validation
 
 The construction of complex readouts requires to evaluate the proper channel spatial definition. Complex 
 readouts will be composed of channels in which several pixels are combined and overlapped. The overlap 
@@ -433,9 +433,9 @@ These figures show the result of running the *REST_Tools_CheckReadout* script fo
 ![Validating different channels and regions in different readout topologies.](Image/readoutValidation.png) 
 
 
-### TRestGeant4Metadata
+## TRestGeant4Metadata
 
-I don't know...
+TO BE written
 
 
 
