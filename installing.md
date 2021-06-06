@@ -4,7 +4,7 @@ title: Installing REST
 nav_order: 2
 ---
 
-TODO. This section might need strong revision. Still you may find good clues on how to proceed, and the README.md at the main repository should still provide the necessary instructions to install REST.
+**TODO. This section might need strong revision. Still you may find good clues on how to proceed, and the README.md at the main repository should still provide the necessary instructions to install REST.**
 
 These instructions will get you a copy of the project up and running on your local machine in your home directory.
 
