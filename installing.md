@@ -153,6 +153,117 @@ restP3DB     |   package  |                         | https://gitlab.pandax.sjtu
 restSQL      |   package  |   -DREST_SQL=ON         | https://lfna.unizar.es/rest-development/restsql
 restWeb      |   package  |                         | https://lfna.unizar.es/rest-development/restWeb
 
+### Updating REST
+
+We recommend updating REST to the latest version if possible. 
+The remote branch "master" is always our target to synchronize the latest stable code.
+The update can be done with:
+
+```
+cd ~/REST_v2  
+git fetch origin master
+git reset --hard FETCH_HEAD
+cd build
+cmake ..
+make -j4 install
+```
+
+Note that if you changed the code, the **file modification** and **file deletion** will be reverted, but the **file creation** will be kept. 
+
+### Installing a particular REST version release
+
+When we download/clone REST repository on our local system, the latest release will be downloaded. 
+We can switch and install any specific REST release by cloning any particular *git tag*.
+
+**Note!:** Save all your changes before continuing. You need to be in a clean copy to be able to change to a new release.
+
+For example, to create a git branch connected to the REST release v2.2.6, you will do the following.
+
+```
+git reset --hard
+git checkout tags/v2.2.6 -b v2.2.6
+```
+
+You may make sure the change took place by checking the status and commit history.
+
+```
+git status
+git log
+```
+
+Then, you may re-use the build directory to compile and install the new version. We recommend to remove your build directory before.
+
+```
+cd REST_SOURCE_PATH
+cd build
+rm -rf *
+cmake -DINSTALL_PREFIX=../install/v2.2.6/ ../
+make -j4 install
+```
+
+### Trouble shooting
+
+#### without git
+
+You can directly download the source code from the website and install REST, with the same command
+described [previously](#installing). Without git, you cannot see the version information on the 
+welcome message. You cannot update or siwtch the version of REST either.
+
+At some point if you want to enable the git access, you can type the following commands:
+
+```
+cd ~/REST_v2  
+rm -rf .git
+git init
+git remote add origin git@lfna.unizar.es:rest-development/REST_v2.git
+git checkout -b master
+git fetch
+git reset --hard origin/master
+cd build
+cmake ..
+make -j4 install
+```
+
+This operation also updates your REST to the latest version.
+
+#### Garfield not found
+
+During cmake, sometimes it says cannot find Garfield. If you are not necessary with drift speed
+and diffusion calculation functionality, you can turn it off: `cmake .. -DREST_GARFIELD=OFF`.
+
+To use Garfield, one must set env "GARFIELD_HOME", "HEED_DATABASE" in the bash. He also needs
+to add Garfield's library dir to "LD_LIBRARY_PATH". The garfield library "libGarfield.so" must 
+be placed in "$GARFIELD_HOME/lib", and the garfield headers must be placed in "$GARFIELD_HOME/Include".
+Garfield is also based on ROOT, and it must be compiled with same ROOT for REST.
+
+Take a look at `installGarfield.sh` for more details.
+
+#### cannot find -lGeom, -lGdml, -lSpectrum, -lEve, -lRGL
+
+During compilation, if it reports error "/usr/bin/ld: cannot find -lXXX" of **more than five 
+libraries**, this means your ROOT installation is incomplete. It is most possible that you 
+are using the OS provided ROOT distribution, which lackes several libraries. Check the 
+ROOT installaion with `root-config --libdir`. If the ROOT library directory is /usr/lib64/root, 
+then it is the case. You need to manually install ROOT. If not, check also the output of
+`cmake` command if it is using ROOT in the unwanted path. If so, source the correct thisROOT.sh,
+clear the build dir, and re-run cmake and make.
+
+#### cannot find -lGdml
+
+During compilation, if it reports error "/usr/bin/ld: cannot find -lXXX" **including Gdml 
+library**, this means your ROOT installation is incomplete. When installing ROOT, you 
+must turn on the compilation flag for ROOT to generate gdml library, as in `installROOT.sh`: 
+`cmake ../source -Dgdml=ON -DCMAKE_INSTALL_PREFIX=${ROOT_DIR}/install`
+
+#### cannot find -lEve, -lRGL
+
+During compilation, if it reports error "/usr/bin/ld: cannot find -lXXX" of **those two
+libraries**, this means ROOT really lacks them. Sometimes the manual installed ROOT won't compile
+those two libraries because the openGL libraries are not installed in the system. You may need 
+to install at least mesa-libGL-devel and glew-devel (and/or xlibmesa-glu-dev and libglew1.5-dev) 
+and re-install ROOT. Another solution is to disable eve libraries dependence in REST, by adding 
+cmake flags like: `cmake .. -DREST_EVE=OFF`
+
 #### libtbb.so.2, needed by XXX/libImt.so, not found; undefined reference to `TParticle::Sizeof3D() const'
 
 This happens when one wants to install REST with `sudo make install`. It will together report many 
