@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Installing REST
+title: Getting started
 nav_order: 3
 ---
 
