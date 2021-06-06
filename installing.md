@@ -4,6 +4,8 @@ title: Installing REST
 nav_order: 2
 ---
 
+TODO. This section might need strong revision. Still you may find good clues on how to proceed, and the README.md at the main repository should still provide the necessary instructions to install REST.
+
 These instructions will get you a copy of the project up and running on your local machine in your home directory.
 
 The recommended way to download a copy of REST will be to clone it using the corresponding git command.
@@ -17,7 +19,7 @@ As soon as REST is under strong development phase the repository will be private
 Before granting access, an account must be registered at the [Unizar Gitlab site](https://lfna.unizar.es). 
 Then, you will need to contact the authors to request access to the code.
 
-### Prerequisites
+## Prerequisites
 
 The only mandatory prerequisite of REST is ROOT6. Details on the installation of ROOT will be found at the [ROOT's official site](root.cern.ch). 
 One may directly find binary distributions on its [download page](https://root.cern.ch/downloading-root). 
@@ -43,7 +45,7 @@ root-config --version
 which root
 ```
 
-### Installing
+## Installing
 
 After ROOT6 has been installed in the system, the compilation of REST should be straight forward. 
 Note that it is recommended to compile REST using the same version of g++ compiler used to compile ROOT.
@@ -67,7 +69,7 @@ Execute the following command to configure your `.bashrc` to load REST in your s
  ```
 
 
-### Basic tests of the REST installation
+## Basic tests of the REST installation
 
 After sourcing `thisREST.sh` you should see a message on screen similar to the following one.
 
@@ -101,7 +103,7 @@ restRoot
 Loading library . libRestFramework.dylib
 ```
 
-### Compilation options
+## Compilation options
 
 Different options can be passed to the `cmake` command to personalize the REST installation. The following options are available in REST.
 
@@ -125,7 +127,7 @@ Different options can be passed to the `cmake` command to personalize the REST i
 
 To pass the options to cmake, one need to append "-DXXX=XXX" in the cmake command, for example: `cmake .. -DREST_WELCOME=OFF -DREST_G4=ON`. Once you explicitly set an option, your option choice will become the default choice for future `cmake` executions.
 
-### Adding libraries (TODO needs revision)
+## Adding libraries (TODO needs revision)
 
 The concrete analysis tasks and experiment setups of REST are kept in individual libraries or packages. 
 The main framework of REST only keeps general event types and analysis algorithms. We need to install
@@ -153,7 +155,7 @@ restP3DB     |   package  |                         | https://gitlab.pandax.sjtu
 restSQL      |   package  |   -DREST_SQL=ON         | https://lfna.unizar.es/rest-development/restsql
 restWeb      |   package  |                         | https://lfna.unizar.es/rest-development/restWeb
 
-### Updating REST
+## Updating REST
 
 We recommend updating REST to the latest version if possible. 
 The remote branch "master" is always our target to synchronize the latest stable code.
