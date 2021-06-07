@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Base classes
+title: REST packages
 nav_order: 90
 ---
 # REST Packages
