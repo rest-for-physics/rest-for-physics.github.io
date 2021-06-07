@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Installing REST
-nav_order: 2
+nav_order: 20
 ---
 
 **TODO. This section might need strong revision. Still you may find good clues on how to proceed, and the README.md at the main repository should still provide the necessary instructions to install REST.**
