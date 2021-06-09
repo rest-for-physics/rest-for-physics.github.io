@@ -50,7 +50,7 @@ We first create TRestGas object manually in restRoot:
 Note that the field value "generate" is "on" in the rml file. TRestDetectorGas will call Garfield to run 
 several simulations with different E field. After few hours of running, we can get gas properties 
 of these points. The table will be saved in a file for the convenience of next startup. We keep a 
-database of varies gas tables in https://github.com/rest-development/gasFiles.
+database of varies gas tables in https://sultan.unizar.es/gasFiles.
 
 Now we quit restRoot and modify the rml file, changing "generate" to "off", and repeat the previous
 work:
