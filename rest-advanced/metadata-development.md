@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Modifying metadata classes
+title: Metadata class development
 parent: REST Advanced
 nav_order: 4
 ---
 
-## Modifying an existing REST process
+## Metadata class development
 {: .no_toc }
 
 ### Table of contents
@@ -19,7 +19,6 @@ nav_order: 4
  We may also need to define new metadata structures that will be stored on our output file and used by our process for some reason. This section will show those basic process and metadata updates we are 
 
 ### Adding new metadata members
-
 
 ### Creating more complex metadata structures
 

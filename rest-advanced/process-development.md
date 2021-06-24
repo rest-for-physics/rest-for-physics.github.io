@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Modifying a process
+title: REST processes development
 parent: REST Advanced
 nav_order: 2
 ---
 
-## Modifying an existing REST process
+## REST process development
 {: .no_toc }
 
 ### Table of contents
