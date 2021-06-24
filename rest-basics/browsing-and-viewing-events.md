@@ -5,10 +5,10 @@ parent: REST Basics
 nav_order: 10
 ---
 
-# Browsing and viewing events
+## Browsing and viewing events
 {: .no_toc }
 
-## Table of contents
+### Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
@@ -38,7 +38,7 @@ Here for example, we use the generated file in [example](process-a-raw-data-file
 `restViewEvents abc.root`. The last event is TRestRawSignalEvent type in this file, and a TRestBrowser
 window will show up drawing the waveforms. In the command line it will print observable values.
 
-![alt](assets/images/restViewEvents.png)
+![alt](../assets/images/restViewEvents.png)
 
 In the TRestBrowser window, on the right side there is a combined plot of the event, which contains 
 several individual signal waveforms. In the left side we have a control panel. The arrow buttoms and the 

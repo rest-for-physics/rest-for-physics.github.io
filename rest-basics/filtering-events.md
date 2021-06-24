@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Drawing event data
+title: Filtering events using analysis observables conditions
 parent: REST Basics
-nav_order: 8
+nav_order: 12
 ---
 
-## Drawing event data
+## Filtering events using analysis observables conditions
 {: .no_toc }
 
 ### Table of contents
