@@ -5,7 +5,7 @@ parent: REST Advanced
 nav_order: 8
 ---
 
-## Adding a new class
+## Adding a new package
 {: .no_toc }
 
 ### Table of contents
@@ -16,7 +16,7 @@ nav_order: 8
 
 ---
 
-** TOBE updated **
+**TOBE updated**
 
 It is possible to write a code based on REST and compile it. We can make a library which extends 
 functionality to REST mainbody, or we can make an executable calling REST classes.
