@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Filtering events
-parent: REST Basics
-nav_order: 12
+title: Using RDataFrame
+parent: Data analysis
+nav_order: 5
 ---
 
-## Filtering events using analysis observables conditions
+## Using RDataFrame for data analysis
 {: .no_toc }
 
 ### Table of contents

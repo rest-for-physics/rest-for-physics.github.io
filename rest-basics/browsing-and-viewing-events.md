@@ -22,9 +22,13 @@ canvas showing the current event, and a control panel to switch between events.
 
 In restRoot prompt, by using TRestBrowser, one can easily get accsess to the file's events, and don't
 need to manually instantiate a TRestEvent object and set the tree's branch address. He just needs to type:  
-`restRoot abc.root`  
-`TRestBrowser a`  
-`TRestxxxEvent*eve=(TRestxxxEvent*)a.GetInputEvent()`,  
+
+```
+restRoot abc.root
+TRestBrowser a
+TRestxxxEvent*eve=(TRestxxxEvent*)a.GetInputEvent()
+```
+
 and will be free to operate this event.
 
 By default TRestBrowser extracts the last event in file, and draws it in the canvas by using the viewer
