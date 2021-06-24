@@ -2,8 +2,9 @@
 layout: default
 title: REST Basics
 nav_order: 52
+has_children: true
 ---
-# Using REST
+# REST basics
 {: .no_toc }
 
 ## Table of contents
@@ -14,6 +15,6 @@ nav_order: 52
 
 ---
 
+[**prev**](../using-rest.md)
+[**next**](../some-metadata-classes.md)
 
-[**prev**](using-rest.md)
-[**next**](some-metadata-classes.md)

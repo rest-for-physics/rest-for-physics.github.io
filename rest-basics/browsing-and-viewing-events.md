@@ -1,14 +1,20 @@
 ---
 layout: default
-title: Drawing event data
+title: Browsing and viewing events
 parent: REST Basics
-nav_order: 8
-has_children: true
+nav_order: 10
 ---
 
-## Drawing event data
+# Browsing and viewing events
+{: .no_toc }
 
-## Browsing and viewing events using TRestBrowser
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 Events in REST data files are managed by TRestRun, whose graphical interface, in turn, is shown by
 by TRestBrowser. This class shows a TBrowser window during initialization. In the window there is a 
