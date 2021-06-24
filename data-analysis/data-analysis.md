@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Data analysis
-nav_order: 52
+nav_order: 55
 has_children: true
 permalink: /data-analysis
 ---
