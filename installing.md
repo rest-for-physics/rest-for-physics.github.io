@@ -4,22 +4,35 @@ title: Installing REST
 nav_order: 20
 ---
 
-**TODO. This section might need strong revision. Still you may find good clues on how to proceed, and the README.md at the main repository should still provide the necessary instructions to install REST.**
+**TODO. This section might need strong revision. Still you may find good clues on how to proceed, and the README.md at the main repository should still provide the necessary basic instructions to install REST.**
 
 These instructions will get you a copy of the project up and running on your local machine in your home directory.
 
 The recommended way to download a copy of REST will be to clone it using the corresponding git command.
 
+### Downloading an official REST release using git
+
+When we download/clone the REST framework repository on our local system, the latest development version will be downloaded.
+We can switch and install any specific REST release by cloning any particular *git tag*.
+
+For example, to create a git branch connected to the REST release v2.2.6, you will do the following.
+
 ```
-cd
-git clone git@lfna.unizar.es:rest-development/REST_v2.git
+git clone https://github.com/rest-for-physics/framework rest-framework
+cd rest-framework
+git checkout tags/v2.3.6
+git checkout -b official
+python3 pull-submodules --clean
 ```
 
-As soon as REST is under strong development phase the repository will be private, and access to the REST repository will be only granted on demand.
-Before granting access, an account must be registered at the [Unizar Gitlab site](https://lfna.unizar.es). 
-Then, you will need to contact the authors to request access to the code.
+You may make sure the change took place by checking the status and commit history.
 
-## Prerequisites
+```
+git status
+git log
+```
+
+## Prerequisites for building REST
 
 The only mandatory prerequisite of REST is ROOT6. Details on the installation of ROOT will be found at the [ROOT's official site](root.cern.ch). 
 One may directly find binary distributions on its [download page](https://root.cern.ch/downloading-root). 
@@ -31,7 +44,7 @@ If your system comes installed with all the [ROOT prerequisites](https://root.ce
 Example of installing ROOT6 using REST installation script.
 
 ```
-cd REST_v2/scripts/installation/  
+cd rest-framework/scripts/installation/  
 ./installROOT.sh  
 ```
 
@@ -53,19 +66,19 @@ Note that it is recommended to compile REST using the same version of g++ compil
 Go to the root directory of your local REST repository, lets name it here `REST_SOURCE_PATH` and execute the following commands.
 
 ```
-cd ~/REST_v2  
+cd ~/rest-framework
 mkdir build
 cd build
 cmake .. -DINSTALL_PREFIX=../install/master/ 
 make -j4 install
 ```
 
-After all the compilation and installation process ends, you will end up with an installed REST version at `~/REST_v2/install/master/`.
+After all the compilation and installation process ends, you will end up with an installed REST version at `~/rest-framework/install/master/`.
 
 Execute the following command to configure your `.bashrc` to load REST in your system environment each time you open a new shell terminal.
 
  ```
- echo "source ~/REST_v2/install/master/thisREST.sh" >> .bashrc
+ echo "source ~/rest-framework/install/master/thisREST.sh" >> .bashrc
  ```
 
 
@@ -81,7 +94,7 @@ After sourcing `thisREST.sh` you should see a message on screen similar to the f
   Branch/Version . v2.2.12_dev/v2.2.12
   Compilation date . 2019-08-27 18.53
 
-  Installed at . /home/daq/REST_v2/install
+  Installed at . /home/daq/rest-framework/install
 
   REST forum site  ezpc10.unizar.es (New!)
   *****************************************************************************
@@ -108,7 +121,7 @@ Loading library . libRestFramework.dylib
 Different options can be passed to the `cmake` command to personalize the REST installation. The following options are available in REST.
 
 * REST Options/features
-    * **INSTALL_PREFIX** allows to define the destination of the final REST install directory. The default value is either "REST_v2/install/" (if you haven't installed REST) or the current REST path (if you already installed REST).
+    * **INSTALL_PREFIX** allows to define the destination of the final REST install directory. The default value is either "rest-framework/install/" (if you haven't installed REST) or the current REST path (if you already installed REST).
     * **REST_WELCOME** (Default. ON) : If dissabled no message will be displayed each time we call thisREST.sh.
     * **REST_GARFIELD** (Default. OFF) : Enables access to [Garfield++](https://garfieldpp.web.cern.ch/garfieldpp/) libraries in REST. Garfield code inside REST will be encapsulated inside `#if defined USE_Garfield` statements.
     * **SQL** (Default: OFF) : Enables the use of mysql libraries in REST. SQL code inside REST will be encapsulated inside `#if defined USE_SQL`.
@@ -162,7 +175,7 @@ The remote branch "master" is always our target to synchronize the latest stable
 The update can be done with:
 
 ```
-cd ~/REST_v2  
+cd ~/rest-framework
 git fetch origin master
 git reset --hard FETCH_HEAD
 cd build
@@ -171,37 +184,6 @@ make -j4 install
 ```
 
 Note that if you changed the code, the **file modification** and **file deletion** will be reverted, but the **file creation** will be kept. 
-
-### Installing a particular REST version release
-
-When we download/clone REST repository on our local system, the latest release will be downloaded. 
-We can switch and install any specific REST release by cloning any particular *git tag*.
-
-**Note!:** Save all your changes before continuing. You need to be in a clean copy to be able to change to a new release.
-
-For example, to create a git branch connected to the REST release v2.2.6, you will do the following.
-
-```
-git reset --hard
-git checkout tags/v2.2.6 -b v2.2.6
-```
-
-You may make sure the change took place by checking the status and commit history.
-
-```
-git status
-git log
-```
-
-Then, you may re-use the build directory to compile and install the new version. We recommend to remove your build directory before.
-
-```
-cd REST_SOURCE_PATH
-cd build
-rm -rf *
-cmake -DINSTALL_PREFIX=../install/v2.2.6/ ../
-make -j4 install
-```
 
 ## Trouble shooting
 
@@ -214,10 +196,10 @@ welcome message. You cannot update or switch the version of REST either.
 At some point if you want to enable the git access, you can type the following commands:
 
 ```
-cd ~/REST_v2  
+cd ~/rest-framework
 rm -rf .git
 git init
-git remote add origin git@lfna.unizar.es:rest-development/REST_v2.git
+git remote add origin git@lfna.unizar.es:rest-development/rest-framework.git
 git checkout -b master
 git fetch
 git reset --hard origin/master

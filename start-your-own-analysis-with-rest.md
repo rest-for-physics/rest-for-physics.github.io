@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Base classes
+title: First analysis steps
 nav_order: 80
 ---
 # Start Your Own Analysis with REST
