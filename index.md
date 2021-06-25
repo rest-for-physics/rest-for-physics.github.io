@@ -4,6 +4,8 @@ title: Introduction
 nav_order: 10
 ---
 
+{: .text-center}
+
 The REST (Rare Event Searches with TPCs) Framework is mainly written in C++ and it is fully integrated with [ROOT](https://root.cern.ch) I/O interface.
 REST was born as a collaborative software effort to provide common tools for acquisition, simulation, and data analysis of gaseous Time Projection Chambers (TPCs).
 The REST Framework provides 3 interfaces that prototype the use of **event types**, **metadata** and **event processes** through `TRestEvent`, `TRestMetadata` and `TRestEventProcess` abstract class definitions.
@@ -30,4 +32,4 @@ We acknowledge support from the the European Research Council (ERC) under the Eu
 ![Insitution logos](assets/images/institution_logos.png)
 
 
-[**next**](installing.md)
+[**REST-for-Physics API documentation **](https://sultan.unizar.es/rest/)  [**REST-for-Physics at GitHub**](https://github.com/rest-for-physics)  [REST-forPhysics forum](rest-forum.unizar.es)
