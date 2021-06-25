@@ -2,7 +2,7 @@
 layout: default
 title: Systematic analysis plot generation
 parent: Data analysis
-nav_order: 5
+nav_order: 3
 ---
 
 ## Using TRestAnalysisPlot for systematic plot generation

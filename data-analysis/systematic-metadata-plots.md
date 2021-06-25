@@ -2,7 +2,7 @@
 layout: default
 title: Systematic metadata plot generation
 parent: Data analysis
-nav_order: 6
+nav_order: 4
 ---
 
 ## Using TRestMetadataPlot for systematic plot generation
