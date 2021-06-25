@@ -31,5 +31,6 @@ We acknowledge support from the the European Research Council (ERC) under the Eu
 
 ![Insitution logos](assets/images/institution_logos.png)
 
+---
 
-[**REST-for-Physics API documentation **](https://sultan.unizar.es/rest/)  [**REST-for-Physics at GitHub**](https://github.com/rest-for-physics)  [REST-forPhysics forum](rest-forum.unizar.es)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[REST-for-Physics API documentation](https://sultan.unizar.es/rest/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [REST-for-Physics at GitHub](https://github.com/rest-for-physics) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [REST-forPhysics forum](rest-forum.unizar.es)
