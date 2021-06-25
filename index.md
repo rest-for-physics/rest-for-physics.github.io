@@ -4,6 +4,8 @@ title: Introduction
 nav_order: 10
 ---
 
+[View it on GitHub](https://github.com/rest-for-physics){: .btn .fs-5 .mb-4 .mb-md-0 }
+
 {: .text-center}
 
 The REST (Rare Event Searches with TPCs) Framework is mainly written in C++ and it is fully integrated with [ROOT](https://root.cern.ch) I/O interface.
@@ -30,7 +32,3 @@ This project is licensed under the GNU License - see the [LICENSE](assets/LICENC
 We acknowledge support from the the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme, grant agreement ERC-2017-AdG788781 (IAXO+), and from the Spanish Agencia Estatal de Investigacion under grant FPA2016-76978-C3-1-P
 
 ![Insitution logos](assets/images/institution_logos.png)
-
----
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[REST-for-Physics API documentation](https://sultan.unizar.es/rest/) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [REST-for-Physics at GitHub](https://github.com/rest-for-physics) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [REST-forPhysics forum](rest-forum.unizar.es)
