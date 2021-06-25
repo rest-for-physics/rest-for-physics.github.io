@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Systematic plot generation
+title: Systematic analysis plot generation
 parent: Data analysis
 nav_order: 5
 ---
