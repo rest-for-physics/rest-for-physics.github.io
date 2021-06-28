@@ -3,6 +3,7 @@ layout: default
 title: Metadata classes
 parent: Backup
 nav_order: 40
+nav_exclude: true
 ---
 
 In this section we will talk about the usage of REST metadata classes. They load useful information 

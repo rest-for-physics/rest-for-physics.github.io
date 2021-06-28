@@ -3,6 +3,7 @@ layout: default
 title: Getting started
 parent: Backup
 nav_order: 10
+nav_exclude: true
 ---
 
 **TODO: This page needs a good revision. It is a getting started page. We need to make it simple. Show basic daily tasks. Launch a restG4 simulation, open a REST-ROOT file, print event, draw event, get event with conditions, draw observable in analysis tree, draw evolution of metadata member, etc. All the RML details should probably go on [TRestMetadata](https://sultan.unizar.es/rest/classTRestMetadata.html) documentation. Few of the sections here are already advanced, such as saving a metadata structure to file or running a complex event data processing chain.**

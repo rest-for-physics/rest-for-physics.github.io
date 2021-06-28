@@ -3,6 +3,7 @@ layout: default
 title: Using REST
 parent: Backup
 nav_order: 30
+nav_exclude: true
 ---
 
 REST in all provides two main executables, several ROOT scripts, several alias calling the scripts, plus a shell

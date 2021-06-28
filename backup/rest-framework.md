@@ -3,6 +3,7 @@ layout: default
 title: REST Framework
 parent: Backup
 nav_order: 90
+nav_exclude: true
 ---
 
 **TODO. This needs update. It does not complain with RESTv2.3. We need to update description to the REST Libraries. Perhaps a framework section describing basic tools, string helper, physics units, and other basic analysis tools. Then create another section with brief library description?**

@@ -3,6 +3,7 @@ layout: default
 title: Base Class interface reference
 parent: Backup
 nav_order: 20
+nav_exclude: true
 ---
 
 The users are welcomed to develop new classes based on REST. In this section, we will talk about the 
