@@ -1,17 +1,8 @@
 ---
 layout: default
 title: Metadata classes
-nav_order: 60
----
-# Some Metadata Classes
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
+parent: Backup
+nav_order: 40
 ---
 
 In this section we will talk about the usage of REST metadata classes. They load useful information 

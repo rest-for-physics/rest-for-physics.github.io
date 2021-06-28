@@ -1,11 +1,11 @@
 ---
 layout: default
-title: REST versioning
+title: Code versioning
 parent: REST Basics
 nav_order: 12
 ---
 
-## REST versioning
+## Code versioning
 {: .no_toc }
 
 ### Table of contents

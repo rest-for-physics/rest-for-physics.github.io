@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Drawing event data
+title: Output levels
 parent: REST Basics
-nav_order: 8
+nav_order: 40
 ---
 
-## Drawing event data
+## Output levels
 {: .no_toc }
 
 ### Table of contents

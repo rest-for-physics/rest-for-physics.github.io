@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Online visualization
-parent: Data processing
-nav_order: 50
+title: Data format
+parent: REST Basics
+nav_order: 20
 ---
 
-## Online visualization during the data processing
+## Data format
 {: .no_toc }
 
 ### Table of contents

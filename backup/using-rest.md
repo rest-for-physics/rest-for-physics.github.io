@@ -1,23 +1,14 @@
 ---
 layout: default
 title: Using REST
-nav_order: 50
----
-# Using REST
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
+parent: Backup
+nav_order: 30
 ---
 
 REST in all provides two main executables, several ROOT scripts, several alias calling the scripts, plus a shell
 script containing REST system infomation. 
 
-![alt](assets/images/executables.png)
+![alt](../assets/images/executables.png)
 
 `restManager` is the main program of REST. It can run in two modes: rml config mode and scripts executing mode.
 "restManager" calls TRestManager class to parse both rml config file and script file.
@@ -291,7 +282,7 @@ When we have prepared the rml file, we can start the process! The command is lik
 
 REST will show a progress bar with timing during the process.
 
-![alt](assets/images/progressbar.png)
+![alt](../assets/images/progressbar.png)
 
 The remaining time is calcluated by the proceeded precentage in the last 10 seconds, while the precentage
 is calculated by(ordered by priority):  
@@ -304,7 +295,7 @@ Pause menu is also available during the process. It can be called out by pressin
 Functionalities like changing verbose level, printing current event or exiting with saving, etc. is provided 
 in the menu. As shown in the following figures.
 
-![alt](assets/images/pausemenu.png)
+![alt](../assets/images/pausemenu.png)
 
 A general case is that when we are doing processing and want to terminate the program. If we directly use 
 "ctrl-c", we will loose all the processed data. So we can stop REST with the help menu, by simply pressing "q"
@@ -316,7 +307,7 @@ REST saves an event tree, an analysis tree, some metadata objects, and additiona
 objects in extended root format. The file can be opened by root after loading REST libraries. We 
 first observe the file structure in TBrowser.
 
-![alt](assets/images/datafile.png)
+![alt](../assets/images/datafile.png)
 
 The `EventTree` is typically a ROOT tree saving branches of event classes, i.e. `TRestRawSignalEvent`, 
 `TRestSignalEvent`, `TRestHitsEvent` in the figure. These pre-defined data types are saved by the 

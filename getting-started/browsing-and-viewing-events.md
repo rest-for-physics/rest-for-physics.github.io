@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Browsing and viewing events
-parent: REST Basics
-nav_order: 10
+parent: Getting started
+nav_order: 40
 ---
 
 ## Browsing and viewing events

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Installing REST
+title: Installation
 nav_order: 20
 ---
 

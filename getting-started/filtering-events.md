@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Online visualization
-parent: Data processing
-nav_order: 50
+title: Filtering events
+parent: Getting started
+nav_order: 20
 ---
 
-## Online visualization during the data processing
+## Filtering events using analysis observables conditions
 {: .no_toc }
 
 ### Table of contents

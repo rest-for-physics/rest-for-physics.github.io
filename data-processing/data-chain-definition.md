@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Filtering events
-parent: REST Basics
-nav_order: 12
+title: Process chain definition
+parent: Data processing
+nav_order: 10
 ---
 
-## Filtering events using analysis observables conditions
+## Process chain definition
 {: .no_toc }
 
 ### Table of contents

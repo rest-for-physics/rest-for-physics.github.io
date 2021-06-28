@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Online visualization
-parent: Data processing
-nav_order: 50
+title: Quick REST file inspection
+parent: Getting started
+nav_order: 10
 ---
 
-## Online visualization during the data processing
+## Quick REST file inspection
 {: .no_toc }
 
 ### Table of contents

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Online visualization
-parent: Data processing
-nav_order: 50
+title: Drawing event data
+parent: Getting started
+nav_order: 30
 ---
 
-## Online visualization during the data processing
+## Drawing event data
 {: .no_toc }
 
 ### Table of contents
