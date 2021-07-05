@@ -3,7 +3,7 @@ layout: default
 title: The restG4 package
 nav_order: 80
 ---
-# The restG4 package
+# restG4 package
 {: .no_toc }
 
 ## Table of contents
