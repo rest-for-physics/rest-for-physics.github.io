@@ -1,9 +1,7 @@
 ---
 layout: default
-title: restG4
+title: The restG4 package
 nav_order: 80
-has_children: true
-permalink: /rest-g4
 ---
 # The restG4 package
 {: .no_toc }
