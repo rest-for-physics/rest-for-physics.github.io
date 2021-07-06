@@ -8,14 +8,6 @@ permalink: /rest-g4
 # restG4 package
 {: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
-
 **TOBE reviewed (brief description + getting started + restG4/examples/ link)** 
 
 **HERE WE COULD HAVE THE SAME TEXT AS AT THE RESTG4 README**

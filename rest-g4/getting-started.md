@@ -8,9 +8,6 @@ nav_order: 10
 **NEEDS REVISION**
 
 ## Getting started with the restG4 package
-{: .d-inline-block }
-
-New {: .label .label-green }
 
 The package restG4 provides a Geant4 code that can be interfaced with REST using [TRestMetadata](https://sultan.unizar.es/rest/classTRestMetadata.html) specific structures and define the Geant4 simulation conditions through a RML file. We use the [TRestGeant4Metadata](https://sultan.unizar.es/rest/classTRestGeant4Metadata.html) class to collect all the initial simulation conditions, such as which and how many particules will be generated, from where they will be generated, what data will be stored in the output file, and few other options. Any additional details will be found at the [TRestGeant4Metadata](https://sultan.unizar.es/rest/classTRestGeant4Metadata.html) class description. The [TRestGeant4PhysicsList](https://sultan.unizar.es/rest/classTRestGeant4PhysicsLists.html) serves to define the physics that will be included in the Geant4 simulations, together with particle production energy cuts, and other physics settings. As any file being processed with REST we will need to define a [TRestRun](https://sultan.unizar.es/rest/classTRestRun.html) object with common run definitions, such as run tag or run type.
 
