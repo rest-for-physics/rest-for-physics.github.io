@@ -1,19 +1,12 @@
 ---
 layout: default
 title: Running an example
-nav_order: 80
+parent: The restG4 package
+nav_order: 20
 ---
-# restG4 package
-{: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
 **TOBE WRITTEN**
+
 ## Running an example with restG4
 {: .d-inline-block }
 

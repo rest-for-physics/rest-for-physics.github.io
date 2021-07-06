@@ -1,19 +1,12 @@
 ---
 layout: default
 title: Getting started
-nav_order: 80
+parent: The restG4 package
+nav_order: 10
 ---
-# restG4 package
-{: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
 **NEEDS REVISION**
+
 ## Getting started with the restG4 package
 {: .d-inline-block }
 
