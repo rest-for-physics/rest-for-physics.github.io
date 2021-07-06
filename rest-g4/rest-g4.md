@@ -2,6 +2,8 @@
 layout: default
 title: The restG4 package
 nav_order: 80
+has_children: true
+permalink: /rest-g4
 ---
 # restG4 package
 {: .no_toc }
@@ -15,6 +17,7 @@ nav_order: 80
 ---
 
 **TOBE reviewed (brief description + getting started + restG4/examples/ link)** 
+**HERE WE COULD HAVE THE SAME TEXT AS AT THE RESTG4 README**
 
 restG4 provides an executable named restG4 which refers to both REST and geant4 library. To install it, 
 we must have Geant4 and REST mainbody installed. Then use commands `cmake` and `make`, as
