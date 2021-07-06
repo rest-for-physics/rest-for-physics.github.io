@@ -5,7 +5,7 @@ nav_order: 80
 has_children: true
 permalink: /rest-g4
 ---
-# restG4 package
+# The restG4 package
 {: .no_toc }
 
 **TOBE reviewed (brief description + getting started + restG4/examples/ link)** 
