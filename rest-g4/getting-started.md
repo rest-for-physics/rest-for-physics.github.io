@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Getting started
+title: Getting started with restG4
 parent: The restG4 package
 nav_order: 10
 ---
