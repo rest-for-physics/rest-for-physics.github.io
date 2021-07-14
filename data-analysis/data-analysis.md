@@ -1,11 +1,11 @@
 ---
 layout: default
-title: REST Basics
-nav_order: 52
+title: Data analysis
+nav_order: 55
 has_children: true
-permalink: /rest-basics
+permalink: /data-analysis
 ---
-# REST basics
+# Data processing
 {: .no_toc }
 
 ## Table of contents

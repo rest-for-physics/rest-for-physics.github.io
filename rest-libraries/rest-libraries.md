@@ -1,11 +1,11 @@
 ---
 layout: default
-title: REST Basics
-nav_order: 52
+title: REST Libraries
+nav_order: 53
 has_children: true
-permalink: /rest-basics
+permalink: /rest-libraries
 ---
-# REST basics
+# REST libraries
 {: .no_toc }
 
 ## Table of contents

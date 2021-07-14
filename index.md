@@ -1,10 +1,15 @@
 ---
 layout: default
-title: Introduction
+title: Home
 nav_order: 10
 ---
 
-## Introduction
+[REST-for-Physics on GitHub](https://github.com/rest-for-physics){: .btn .btn-blue .fs-4 .mb-4 .mb-md-0 }
+[Forum](http://rest-forum.unizar.es){: .btn .btn-green .fs-4 .mb-4 .mb-md-0 }
+[API documentation](https://sultan.unizar.es/rest){: .btn .btn-purple .fs-4 .mb-4 .mb-md-0 }
+[Zenodo](https://doi.org/10.5281/zenodo.4922415){: .btn .btn-blue .fs-4 .mb-4 .mb-md-0 }
+
+---
 
 The REST (Rare Event Searches with TPCs) Framework is mainly written in C++ and it is fully integrated with [ROOT](https://root.cern.ch) I/O interface.
 REST was born as a collaborative software effort to provide common tools for acquisition, simulation, and data analysis of gaseous Time Projection Chambers (TPCs).
@@ -21,5 +26,14 @@ i.e. the **specific** resulting `TRestEvent` output, the `TRestAnalysisTree`, an
 The REST Framework provides additionally different interfaces to **browse data**, `TRestBrowser`, and to **plot data**, `TRestAnalysisPlot`, by accessing `TRestEvent` and `TRestAnalysisTree` ROOT-based drawing methods.
 Other objects included in the framework will help to add unit definitions, `REST_Units`, define physical constants `REST_Physics`, or provide methods to help on text formatting `TRestStringHelper` or define output styles, `TRestStringOutput`.
 
+## License
 
-[**next**](installing.md)
+This project is licensed under the GNU License - see the [LICENSE](assets/LICENCE) file for details
+
+## Acknowledgments
+
+We acknowledge support from the the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme, grant agreement ERC-2017-AdG788781 (IAXO+), and from the Spanish Agencia Estatal de Investigacion under grant FPA2016-76978-C3-1-P
+
+![Insitution logos](assets/images/institution_logos.png)
+
+

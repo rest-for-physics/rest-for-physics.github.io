@@ -1,9 +1,9 @@
 ---
 layout: default
-title: REST Basics
-nav_order: 52
+title: Getting started
+nav_order: 30
 has_children: true
-permalink: /rest-basics
+permalink: /getting-started
 ---
 # REST basics
 {: .no_toc }

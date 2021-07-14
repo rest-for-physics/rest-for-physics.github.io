@@ -1,17 +1,9 @@
 ---
 layout: default
 title: REST Framework
-nav_order: 40
----
-# REST framework
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
+parent: Backup
+nav_order: 90
+nav_exclude: true
 ---
 
 **TODO. This needs update. It does not complain with RESTv2.3. We need to update description to the REST Libraries. Perhaps a framework section describing basic tools, string helper, physics units, and other basic analysis tools. Then create another section with brief library description?**
@@ -30,7 +22,7 @@ base classes which builds up the whole framework of REST. libRestCore relies on 
 provide some basic tools(string tools, output tools, units tools) and some external codes. Up on libRestCore, 
 other REST libraries such as libRestProcesses, libRestMetadata, libRestEvents and libRestTasks are built.
 
-![alt](assets/images/libs.png)
+![alt](../assets/images/libs.png)
 
 Here we will talk about some important classes in libRestCore. The methods in these classes will only get their 
 names mentioned. One can find their detailed usage in REST class reference.
@@ -146,7 +138,7 @@ TRestSignalToHitProcess, which maps the channel id with their physical location 
 readout file. The signal will be convered into 3D hit points. Finally we are able to draw a hit map or an 
 energy spectrum with spacial cut.
 
-![alt](assets/images/process_chain.png)
+![alt](../assets/images/process_chain.png)
 
 In this way, an event is conducted and analized by a chain of processes. It is conducted with the changing 
 representation of TRestEvent. During the process, we extract its information, mix our definition, and change 

@@ -1,23 +1,15 @@
 ---
 layout: default
 title: Using REST
-nav_order: 50
----
-# Using REST
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
+parent: Backup
+nav_order: 30
+nav_exclude: true
 ---
 
 REST in all provides two main executables, several ROOT scripts, several alias calling the scripts, plus a shell
 script containing REST system infomation. 
 
-![alt](assets/images/executables.png)
+![alt](../assets/images/executables.png)
 
 `restManager` is the main program of REST. It can run in two modes: rml config mode and scripts executing mode.
 "restManager" calls TRestManager class to parse both rml config file and script file.
@@ -291,7 +283,7 @@ When we have prepared the rml file, we can start the process! The command is lik
 
 REST will show a progress bar with timing during the process.
 
-![alt](assets/images/progressbar.png)
+![alt](../assets/images/progressbar.png)
 
 The remaining time is calcluated by the proceeded precentage in the last 10 seconds, while the precentage
 is calculated by(ordered by priority):  
@@ -304,7 +296,7 @@ Pause menu is also available during the process. It can be called out by pressin
 Functionalities like changing verbose level, printing current event or exiting with saving, etc. is provided 
 in the menu. As shown in the following figures.
 
-![alt](assets/images/pausemenu.png)
+![alt](../assets/images/pausemenu.png)
 
 A general case is that when we are doing processing and want to terminate the program. If we directly use 
 "ctrl-c", we will loose all the processed data. So we can stop REST with the help menu, by simply pressing "q"
@@ -316,7 +308,7 @@ REST saves an event tree, an analysis tree, some metadata objects, and additiona
 objects in extended root format. The file can be opened by root after loading REST libraries. We 
 first observe the file structure in TBrowser.
 
-![alt](assets/images/datafile.png)
+![alt](../assets/images/datafile.png)
 
 The `EventTree` is typically a ROOT tree saving branches of event classes, i.e. `TRestRawSignalEvent`, 
 `TRestSignalEvent`, `TRestHitsEvent` in the figure. These pre-defined data types are saved by the 
@@ -356,86 +348,3 @@ information.
 Finally, REST allows processes to save some ROOT analysis objects in the file. Here the TH1D
 "ChannelActivity_M3" is saved by the process "rA" (of type TRestRawReadoutAnalysisProcess). We can 
 directly draw it.
-
-## Plot the analysis result
-
-It is possible to plot histograms from observables in output file with rml configuration. REST has a core class 
-called TRestAnalysisPlot. It generates plot string according to the rml and calls TTree::Draw() to draw the 
-histogram. Then it will save the plots to a pdf file or ROOT file.
-
-To use it, a "TRestAnalysisPlot" section is needed in "TRestManager" section. The template of rml config file 
-for TRestAnalysisPlot can be found in ./examples/plotAnaSpectrum.rml. It shall follow the rules below. The 
-command to call for plotting is like:  
-`restManager --c plotAnaSpectrum.rml --i abc.root --p ouput.pdf`  
-
-### add input file
-
-The input file of analysis plot is given in a same way as process chain. One can either write `--i XXX.root`
-in the command line, or to write a TRestRun section, and define parameter input file inside it. Multiple
-input files are supported.
-
-Sometimes we want to run a process chain and see the result on analysis plot at once. Then we just need to 
-add the `<TRestAnalysisPlot` section after `<TRestProcessRunner` section. REST will automatically use the 
-output file of processes as the input file as analysis plot.
-
-
-### defining plot and histo
-
-The definition of plot objects inside the rml file follows the section hierarchy:
-
-* TRestAnalysisPlot
-* plot
-* histo
-
-![alt](assets/images/plot_hierarchy.png)
-
-At each level we have different parameters to set. Under the main TRestAnalysisPlot section, we first add 
-a section like:  
-`<canvas size="(1000,800)" divide="(2,2)" save="plot.pdf" />`  
-This defines the canvas and divide it into several pads. Each pads is configured by the following `<plot` 
-section:  
-`<plot name="Spectrum_CutImpact" title="Impact of cut on the spectrum" xlabel="Threshold integral energy [ADC units]" ylabel="Counts" logscale="true" legend="on" annotation="on">`  
-...  
-`</plot>`
-This sets the axis title and switch the log scale. We can also call to add additional objects on the plot,
-i.e., legend and annotation.
-
-Under the plot we need to add histo. It is possible to add multiple histograms on a same plot for 
-convenience of comparing. The histo section is like:  
-`<histo name="noCuts">`  
-&emsp;`<variable name="sAna_ThresholdIntegral" nbins="100" />`   
-&emsp;`<parameter name="lineColor" value="1"/>`  
-`</histo>`  
-, where we define the used variables and the drawing style. The variable is same as "observable" in
-AnalysisTree in input file. If we add one variable, then it draws a TH1. If we add two variables, 
-it draws a TH2, whose X axis is the first added variable. Number of bins and range of variable can 
-both be set.
-
-Note that if there is only one histogram, the content inside `<histo` section can also be put inside 
-`<plot` section, in order to reduce the code.
-
-### cuts and file selection
-
-Now we define another histogram with some cuts:  
-`<histo name="BaseLine">`  
-&emsp;`<variable name="sAna_ThresholdIntegral" nbins="100" />`   
-&emsp;`<cut variable="sAna_BaseLineSigmaMean" condition="&lt;12" value="ON" />`  
-&emsp;`<parameter name="lineColor" value="2"/>`  
-`</histo>`  
-
-In this example we add a cut that the observable "sAna_NumberOfGoodSignals" should be greater than 1. 
-Note that standard xml needs escape string to express the symbol `>`. Though this symbol still works 
-out of some reason, we suggest using `&gt;` instead of `>` for a good habit.
-
-REST supports multiple input files for analysis plot, also by inputing quoted file name pattern in the `--i` 
-argument. All the files will contribute to the plotted histogram. Sometimes we want to draw two histograms 
-from two different files to compare, then a **filter** for the files is needed. We can add a `<classify`
-section under this `<histo` section. For example, `<classify runTag="NLDBD"/>` selects only the files 
-with run tag equals to "NLDBD". The run tag is a TRestRun data member saved in file. Despite TRestRun 
-information, other supported fields of classification include FileName, Date, Size, etc.
-
-![alt](assets/images/plot.png)
-
-
-[**prev**](rest-framework.md)
-[**next**](rest-basics.md)

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Quick REST file inspection
-parent: REST Basics
-nav_order: 1
+title: Official REST macros
+parent: Data analysis
+nav_order: 8
 ---
 
-## Quick REST file inspection
+## Using official REST macros
 {: .no_toc }
 
 ### Table of contents

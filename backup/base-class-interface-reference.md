@@ -1,17 +1,9 @@
 ---
 layout: default
-title: Base classes
-nav_order: 70
----
-# Base Class Interface Reference
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
+title: Base Class interface reference
+parent: Backup
+nav_order: 20
+nav_exclude: true
 ---
 
 The users are welcomed to develop new classes based on REST. In this section, we will talk about the 

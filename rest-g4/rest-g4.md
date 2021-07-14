@@ -1,24 +1,16 @@
 ---
 layout: default
-title: REST packages
-nav_order: 90
+title: The restG4 package
+nav_order: 80
+has_children: true
+permalink: /rest-g4
 ---
-# REST Packages
+# The restG4 package
 {: .no_toc }
 
-## Table of contents
-{: .no_toc .text-delta }
+**TOBE reviewed (brief description + getting started + restG4/examples/ link)** 
 
-1. TOC
-{:toc}
-
----
-
-REST provides extensible functionalities through so-called "packages". They are separate program based 
-on REST mainbody and other softwares. They adds libraries and executables to REST installation, thus 
-providing new functionalities.
-
-## restG4
+**HERE WE COULD HAVE THE SAME TEXT AS AT THE RESTG4 README**
 
 restG4 provides an executable named restG4 which refers to both REST and geant4 library. To install it, 
 we must have Geant4 and REST mainbody installed. Then use commands `cmake` and `make`, as
@@ -36,7 +28,7 @@ Then a geant4 simulation will start for 100 events, generating a file "example_o
 contains a TTree with branch "TRestGeant4EventBranch", and a TGeoManager named "Geometry". We can view them 
 in TBrowser.
 
-![alt](assets/images/restG4output.png)
+![alt](../assets/images/restG4output.png)
 
 With restG4, we can do a two-step simulation to test our detector response. First use restG4 to generate 
 root file with raw event data. Then use REST build-in processes to convert this root file into signal 
@@ -49,15 +41,3 @@ For example, we process the previous output file with the example rml:
 
 This gives us information of cut efficiency of track recognition.
 
-## restDecay0
-
-...
-
-
-## restSQL
-
-...
-
-
-[**prev**](start-your-own-analysis-with-rest.md)
-[**next**](appendix.md)

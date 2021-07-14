@@ -1,11 +1,12 @@
 ---
 layout: default
-title: REST Basics
-nav_order: 52
+title: Backup
+nav_order: 110
 has_children: true
-permalink: /rest-basics
+permalink: /backup
+nav_exclude: true
 ---
-# REST basics
+# Backup
 {: .no_toc }
 
 ## Table of contents
@@ -16,5 +17,5 @@ permalink: /rest-basics
 
 ---
 
-Introduction TOBE written
+This is just pages that need to be re-structured
 
