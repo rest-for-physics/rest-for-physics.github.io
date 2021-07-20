@@ -47,6 +47,8 @@ After changing the source code, we need to switch to the build directory and typ
 Then, TRestRawSignalAnalysisProcess will be working in a new way. We don't need to change the rml 
 file or the header file. The class definition would remain unchanged. 
 
+### Adding error messages to a process
+
 ### Modifying the event data inside a process
 
 ### Creating a new process
