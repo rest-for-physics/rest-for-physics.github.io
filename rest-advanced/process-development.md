@@ -49,20 +49,20 @@ file or the header file. The class definition would remain unchanged.
 
 ### Registering error or warning messages inside a process
 
-Any metadata class is able to register one warning message and one error message. In order to register an error or warning inside the [TRestMetadata](https://sultan.unizar.es/rest/classTRestEventProcess.html) class we need to call the `SetError` or `SetWarning` methods. Right now, we store only the latest message passed to those methods, but each call will increase a counter so that we are able to identify the number of times those methods were called.
+Any metadata class is able to register one warning message and one error message. In order to register an error or warning inside the [TRestMetadata](https://sultan.unizar.es/rest/classTRestMetadata.html) class we need to call the `SetError` or `SetWarning` methods. Right now, we store only the latest message passed to those methods, but each call will increase a counter so that we are able to identify the number of times those methods were called.
 
-A process itself is a metadata class, and therefore, inside a process we will be able to add those error, or warning, messages when some conditions are fulfilled. We will be able to set the error for the process itself (this) or any other metadata class available at [TRestRun](https://sultan.unizar.es/rest/classTRestEventProcess.html). In a hypothetical case we could do the following inside our process:
+A process itself is a metadata class, and therefore, inside a process we will be able to add those error, or warning, messages when some conditions are fulfilled. We will be able to set the error for the process itself (this) or any other metadata class available at [TRestRun](https://sultan.unizar.es/rest/classTRestRun.html). In a hypothetical case we could do the following inside our process:
 
 ```
 if( nHits == 0 )
 	this->SetError("The number of hits is zero!");
 
-fReadout = (TRestDetectorReadout>GetMetadata();
+fReadout = <TRestDetectorReadout>GetMetadata();
 if( fReadout->GetNumberOfChannels() != 512 )
 	fReadout->SetWarning( "Process: DetectorSignalToHits. Number of channels is not 512!");
 ```
 
-Then, each metadata class will get a collection of warnings an errors. Once a file was processed with REST we will be able to print out those collected errors through the [TRestRun](https://sultan.unizar.es/rest/classTRestEventProcess.html) interface, using the `PrintErrors` and `PrintWarnings` methods.
+Then, each metadata class will get a collection of warnings an errors. Once a file was processed with REST we will be able to print out those collected errors through the [TRestRun](https://sultan.unizar.es/rest/classTRestRun.html) interface, using the `PrintErrors` and `PrintWarnings` methods.
 
 ```
 restRoot myFile.root
@@ -70,7 +70,7 @@ restRoot myFile.root
 -- Warning : Found a total of 1 process warnings at thread 0
 
 -- Warning : Class: TRestDetectorSignalToHitsProcess Name: signalToHits
--- Warning : Number of warnings 96
+-- Warning : Number of warnings: 96
 -- Warning : Message: Last event id: 117619. Failed to find readout positions in channel to hit conversion.
 ```
 
