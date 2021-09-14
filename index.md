@@ -8,6 +8,7 @@ nav_order: 10
 [Forum](http://rest-forum.unizar.es){: .btn .btn-green .fs-4 .mb-4 .mb-md-0 }
 [API documentation](https://sultan.unizar.es/rest){: .btn .btn-purple .fs-4 .mb-4 .mb-md-0 }
 [Zenodo](https://doi.org/10.5281/zenodo.4922415){: .btn .btn-blue .fs-4 .mb-4 .mb-md-0 }
+[Publication](https://arxiv.org/abs/2109.05863){: .btn .btn-green .fs-4 .mb-4 .mb-md-0 }
 
 ---
 
