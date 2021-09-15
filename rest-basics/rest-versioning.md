@@ -56,11 +56,11 @@ When modifying the data members of the class the developer should increase the v
 
 ## REST libraries versioning
 
-The libraries in REST are connected to the main framework using `git submodules`. An official REST release is directly connected to a submodule commit id, that submodule/library commit id will be the official REST library version. Therefore, the official versioning of libraries is controlled by the main framework, since it is at the framework where we decide which is the exact commit that will be downloaded with the official version.
+The libraries in REST are connected to the main framework using `git submodules`. An official REST release is directly connected to a submodule commit id, being that submodule/library commit id the official REST library version. Therefore, the official versioning of libraries is controlled by the main framework, since we fix at the main framework repository the exact commit that will be downloaded with the official version.
 
 Eventhough the versioning is centralized and managed by the framework, each library defines an internal version number so that users may identify changes on a particular library, being those changes connected again with the tag release of the git repository. E.g. changes will be described at the tags section, as for example, the [rawlib releases description](https://github.com/rest-for-physics/rawlib/releases).
 
-When working at our local copy we might wish to recover the official state of all submodules in our source code directory. Then, we may use the `pull-submodules.py` command to remove any undesidered local modification introduced at the submodules, or libraries.
+When working at our local copy we might wish to recover the official state of all submodules in our source code directory. Then, we may use the `pull-submodules.py` command to remove any undesired local modification introduced at the submodules, or libraries.
 
 ```
 python3 pull-submodules.py --clean
