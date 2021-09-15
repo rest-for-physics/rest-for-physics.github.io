@@ -22,7 +22,7 @@ The stamped version number in the file might serve as a solution to reproduce or
 
 The version number of an official REST code release is built using 3 digits (2.X.Y, being X and Y the major and minor revision numbers) that identify major or measurable steps on the evolution of the code. This number is registered at any metadata class written to disk. It must be noticed that a REST data file processed at different stages may contain objects with different version numbers, if processed with different REST versions on different stages. The [TRestRun](https://sultan.unizar.es/rest/classTRestRun.html) object available inside the data file will always be stamped with the code version of the REST release used in the last processing.
 
-Further details on the versioning strategy of REST will be found at our [contribution guide](https://github.com/rest-for-physics/framework/blob/master/CONTRIBUTING.md). A step by step guide to generate a new REST official release will be found [here](../rest-advanced/new-release.md).
+Further details on the versioning strategy of REST will be found at our [contribution guide](https://github.com/rest-for-physics/framework/blob/master/CONTRIBUTING.md). A step by step guide to generate a new REST official release will be found [here](../rest-advanced/new-release.md). A summary of the changes introduced at each code release will be found at the git repository, [tags section](https://github.com/rest-for-physics/framework/releases).
 
 ## Downloading a particular official (and non-official) release
 
@@ -54,3 +54,22 @@ ClassDefOverride(TRestAxionMagneticField, 3);
 
 When modifying the data members of the class the developer should increase the version number given at this call. That action will help ROOT to read previous versions of the class written to disk, and it will **guarantee backwards compatibility**.
 
+## REST libraries versioning
+
+The libraries in REST are connected to the main framework using `git submodules`. An official REST release is directly connected to a submodule commit id, that submodule/library commit id will be the official REST library version. Therefore, the official versioning of libraries is controlled by the main framework, since it is at the framework where we decide which is the exact commit that will be downloaded with the official version.
+
+Eventhough the versioning is centralized and managed by the framework, each library defines an internal version number so that users may identify changes on a particular library, being those changes connected again with the tag release of the git repository. E.g. changes will be described at the tags section, as for example, the [rawlib releases description](https://github.com/rest-for-physics/rawlib/releases).
+
+When working at our local copy we might wish to recover the official state of all submodules in our source code directory. Then, we may use the `pull-submodules.py` command to remove any undesidered local modification introduced at the submodules, or libraries.
+
+```
+python3 pull-submodules.py --clean
+```
+
+In case we wish to switch to a libraries development version, we may get the latest commit at any submodule master branch by executing:
+
+```
+python3 pull-submodules.py --latest
+```
+
+This will place each library at the latest commit found at each `master` branch of each library.
