@@ -28,7 +28,7 @@ The generation of a new version release is a 2-steps process. First we need to i
 
 ## Generating a new REST library version release
 
-Libraries are centrally managed by the REST framework versioning system (see also the basic [versioning guide](../rest-basics/rest-versioning.md)). However, each library is associated to an independent version number so that users identify promptly any changes related to that particular library. And developers have the opportunity to summarize the relevant changes at each library. At the same time, the version number evolution gives a hint on the activity intensity on a particular library. 
+Libraries are centrally managed by the REST framework versioning system (see also the basic [versioning guide](../rest-basics/rest-versioning.md)). However, each library is associated to an independent version number so that users identify promptly any changes related to that particular library. On top of that, a new release allows to summarize the relevant changes at each library version. And, at the same time, the version number evolution gives a hint on the activity intensity on a particular library. 
 
 Therefore, if we want to introduce the latest commits of a particular library into the REST official release, it is better to make sure that those latest updates are released and included inside a version number.
 
@@ -65,10 +65,61 @@ git push
 git tag -a v1.4 -m "v1.4"
 ```
 
-Then, perform the following actions.
+Then, perform the following actions at the GitHub repository site.
 
-* Go to the corresponding library GitHub page, and create a new pull-request (PR) to merge the new version release into master.
+* Go to the corresponding library GitHub page, and create a new pull-request (PR) to merge the new branch `release_v1.4` into master.
 * Go to the tags section, and press edit at the recent tag just created, inserting few bullets creating a list summarizing the changes since the last version. Those points should give an overview, or meaningfull representation, of the new commits.
 
+You must assign a member of REST as a reviewer inside the generated PR. The reviewer will approve the new version generation, and changed will be merged to master.  The reviewer might be any member, but you might select any available member at the `library_dev` team, selecting the group `rest-for-physics/library_dev`.
+
+Once the PR is approved we are done! Repeat this step for any library that you want to be updated at the official REST release.
+
+It must be noted then that library versions might be updated at any time, creating new version numbers with small updates. Then, the new library version will only be part of the official REST framework release if the corresponding library submodule reference is updated, as described in the following section.
+
 ## Submitting a new REST official release
+
+First of all we will need to create a dedicated branch so that we will be able to push it later to the repository. Make sure you are at the latest master inside the `rest-framework` directory by executing the following commands
+
+```
+cd rest-framework
+git fetch
+git checkout master
+git pull
+git checkout -b release_v2.3.9
+```
+
+Then, we add as a commit the latest submodule reference we want to include in the new official release we are preparing, double-checking that the library is at the latest state we want to include.
+
+```
+cd rest-framework/source/libraries/rawlib/
+git fetch
+git checkout master
+git pull
+git log
+```
+
+The last commit at the output of `git log` should correspond with the library commit we want to make official. I.e. in our example the last commit should be "Fixing release 1.4". Then we proceed to update the submodule at the main repository.
+
+```
+cd ../../../
+git add source/libraries/raw
+git commit -m "Updating rawlib to version 1.4"
+git push
+```
+
+We repeat this process for any libraries/submodules we want to update at the official release.
+
+Then, we need to produce a new `TRestVersion.h` header to create the new REST official release. Just go to the `scripts` directory, and execute:
+
+```
+cd rest-framework/scripts
+./generateVersionHeader.py
+```
+
+The execution generates a new `TRestVersion.h` header that we will use to update the REST version release header. This time follow the instructions given on the screen, by simply copy/pasting the commands starting by `----->`.
+
+Then, at the GitHub site follow the same steps as for generating a library release:
+
+* Go to the corresponding [framework GitHub page](https://github.com/rest-for-physics/framework), and create a new pull-request (PR) to merge the new branch `release_v2.3.9` into master.
+* Go to the tags section, and press edit at the recent tag just created, inserting few bullets creating a list summarizing the changes since the last version. Those points should give an overview, or meaningfull representation, of the new commits inside the framework, together with the versions and links to the library or package submodules updated.
 
