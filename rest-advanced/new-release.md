@@ -76,6 +76,8 @@ Once the PR is approved we are done! Repeat this step for any library that you w
 
 It must be noted then that library versions might be updated at any time, creating new version numbers with small updates. Then, the new library version will only be part of the official REST framework release if the corresponding library submodule reference is updated, as described in the following section.
 
+Do not hesitate to check the [contribution guide](https://github.com/rest-for-physics/rawlib/blob/master/CONTRIBUTING.md) at each library for further details.
+
 ## Submitting a new REST official release
 
 First of all we will need to create a dedicated branch so that we will be able to push it later to the repository. Make sure you are at the latest master inside the `rest-framework` directory by executing the following commands
@@ -123,3 +125,4 @@ Then, at the GitHub site follow the same steps as for generating a library relea
 * Go to the corresponding [framework GitHub page](https://github.com/rest-for-physics/framework), and create a new pull-request (PR) to merge the new branch `release_v2.3.9` into master.
 * Go to the tags section, and press edit at the recent tag just created, inserting few bullets creating a list summarizing the changes since the last version. Those points should give an overview, or meaningfull representation, of the new commits inside the framework, together with the versions and links to the library or package submodules updated.
 
+Do not hesitate to check the framework [contribution guide](https://github.com/rest-for-physics/framework/blob/master/CONTRIBUTING.md) for further details.
