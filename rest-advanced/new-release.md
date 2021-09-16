@@ -63,6 +63,7 @@ git add CMakeLists.txt
 git commit -m "Fixing release 1.4"
 git push
 git tag -a v1.4 -m "v1.4"
+git push --tags
 ```
 
 Then, perform the following actions at the GitHub repository site.
@@ -70,9 +71,7 @@ Then, perform the following actions at the GitHub repository site.
 * Go to the corresponding library GitHub page, and create a new pull-request (PR) to merge the new branch `release_v1.4` into master.
 * Go to the tags section, and press edit at the recent tag just created, inserting few bullets creating a list summarizing the changes since the last version. Those points should give an overview, or meaningfull representation, of the new commits.
 
-You must assign a member of REST as a reviewer inside the generated PR. The reviewer will approve the new version generation, and changed will be merged to master.  The reviewer might be any member, but you might select any available member at the `library_dev` team, selecting the group `rest-for-physics/library_dev`.
-
-Once the PR is approved we are done! Repeat this step for any library that you want to be updated at the official REST release.
+You must assign a member of REST as a reviewer inside the generated PR. The reviewer will approve the new version generation. The reviewer might be any member, but you might select any available member at the `library_dev` team, selecting the group `rest-for-physics/library_dev`. Once you merge the PR to the `master` branch, we are done! Repeat this step for any library that you want to be updated at the official REST release.
 
 It must be noted then that library versions might be updated at any time, creating new version numbers with small updates. Then, the new library version will only be part of the official REST framework release if the corresponding library submodule reference is updated, as described in the following section.
 
