@@ -1,6 +1,6 @@
 ---
 layout: default
-title: C-macro
+title: Using C-macros
 parent: Quick REST file inspection
 grand_parent: Getting started
 nav_order: 30
