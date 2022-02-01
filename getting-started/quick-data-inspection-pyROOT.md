@@ -77,3 +77,32 @@ rn.GetMetadata( mdNames[1] ).PrintMetadata()
 
 ### Accessing a specific event entry
 
+From the *rn* instance we may also get access to the event data and the analysis tree data. We just get the pointers to those objects using the `TRestRun` methods. Then, we may get any entry number found inside the file. Note that the entry number is just the position of the entry within the file, but it does not serve to fully identify the event. The event ID, which might take any integer value, is unique, and it can be used to identify an event between different files.
+
+When we request an entry or event id to the `TRestRun` instance, the event pointer, named here *g4Ev*, and the analysis tree pointer, named here *aT*, will change their memory address to point to the location of the event entry we specified using the `TRestRun` methods: `GetEntry(N)`, `GetNextEntry()` or `GetEventWithID(id)`.
+
+In this example we print the event data and analysis tree entries from 3 different event entries.
+```
+# We retrieve the event pointer
+g4Ev = rn.GetInputEvent()
+
+# We retrieve the analysisTree pointer
+aT = rn.GetAnalysisTree()
+
+# There are in total 9421 entries. We get an arbitrary entry in between
+rn.GetEntry(1213)
+g4Ev.PrintEvent()
+aT.PrintObservables()
+
+# We get the next entry. It should be entry 1214.
+rn.GetNextEntry()
+g4Ev.PrintEvent()
+aT.PrintObservables()
+
+# We get the event with id 1858. Probably does not correspond with entry 1858
+rn.GetEventWithID(1858)
+g4Ev.PrintEvent()
+aT.PrintObservables()
+```
+
+Note that in order to register the event data inside our analysis file it is necesary to enable the parameter `outputEventStorage`. If this parameter is not specified, its default should be `on`.
