@@ -14,10 +14,14 @@ This section shows how to open a ROOT file generated with REST, access the basic
 
 The examples shown in this section will use as input a file generated using the example [08.Alphas](https://github.com/rest-for-physics/restG4/tree/master/examples/08.Alphas) implemented inside restG4. The [README.md](https://github.com/rest-for-physics/restG4/tree/master/examples/08.Alphas/README.md) contains information on how to generate a first dataset. We will need the file generated after executing the `analysis.rml` configuration file. In our case the file name is `Run_g4Analysis_5MeV_1um.root`.
 
-The different sub-section will show how to perform those REST file actions with different interfaces, a python environment or script, a C-macro based on ROOT or pre-loading the file objects using `restRoot` ROOT interface with pre-loaded REST libraries.
+If you use that example make sure you activate the `outputEventStorage` parameter.
 
+```xml
+<parameter name="outputEventStorage" value="on" />
+```
 
-### Table of contents
+The different sub-sections will show how to perform those REST file actions with different interfaces, a python environment or script, a C-macro based on ROOT, or opening the file objects using `restRoot` ROOT interface with pre-loaded REST libraries.
+
 {: .no_toc .text-delta }
 
 1. TOC
