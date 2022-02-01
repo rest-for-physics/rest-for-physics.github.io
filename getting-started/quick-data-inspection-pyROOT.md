@@ -111,9 +111,8 @@ Obviously, now we could iterate over all the events to get specific information 
 
 ```python
 for n in range(nEntries):
-	rn.GetRunEntry(n)
+	rn.GetEntry(n)
 	##
-	## We do what we wish with g4Ev and aT for each event entry
+	## We do whatever we need with g4Ev and aT for each event entry
 	##
 ```
-	
