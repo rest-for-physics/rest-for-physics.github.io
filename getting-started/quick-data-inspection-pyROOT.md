@@ -106,3 +106,14 @@ aT.PrintObservables()
 ```
 
 Note that in order to register the event data inside our analysis file it is necesary to enable the parameter `outputEventStorage`. If this parameter is not specified, its default will be normally `on`.
+
+Obviously, now we could iterate over all the events to get specific information and perform a dedicated analysis using the event or analysis tree methods.
+
+```python
+for n in range(nEntries):
+	rn.GetRunEntry(n)
+	##
+	## We do what we wish with g4Ev and aT for each event entry
+	##
+```
+	
