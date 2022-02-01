@@ -69,7 +69,7 @@ Go to the root directory of your local REST repository, lets name it here `REST_
 cd ~/rest-framework
 mkdir build
 cd build
-cmake .. -DINSTALL_PREFIX=../install/master/ 
+cmake .. -DCMAKE_INSTALL_PREFIX=../install/master/ 
 make -j4 install
 ```
 
@@ -121,7 +121,7 @@ Loading library . libRestFramework.dylib
 Different options can be passed to the `cmake` command to personalize the REST installation. The following options are available in REST.
 
 * REST Options/features
-    * **INSTALL_PREFIX** allows to define the destination of the final REST install directory. The default value is either "rest-framework/install/" (if you haven't installed REST) or the current REST path (if you already installed REST).
+    * **CMAKE_INSTALL_PREFIX** allows to define the destination of the final REST install directory. The default value is either "rest-framework/install/" (if you haven't installed REST) or the current REST path (if you already installed REST).
     * **REST_WELCOME** (Default. ON) : If dissabled no message will be displayed each time we call thisREST.sh.
     * **REST_GARFIELD** (Default. OFF) : Enables access to [Garfield++](https://garfieldpp.web.cern.ch/garfieldpp/) libraries in REST. Garfield code inside REST will be encapsulated inside `#if defined USE_Garfield` statements.
     * **SQL** (Default: OFF) : Enables the use of mysql libraries in REST. SQL code inside REST will be encapsulated inside `#if defined USE_SQL`.
