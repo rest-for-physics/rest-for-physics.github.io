@@ -57,6 +57,8 @@ print ( "The number of entries is : " + str( nEntries ) )
 
 The following example uses the already existing *rn* instance to retrieve a list of metadata objects found inside the file, prints the list with the metadata name together with its specific metadata class name, and calls the `PrintMetadata` method (present at any metadata class) to print information regarding one of the metadata objects in the list.
 
+We use here the analysis file generated with restG4 [08.Alphas example](https://github.com/rest-for-physics/restG4/tree/master/examples/08.Alphas).
+
 ```python
 # We retrieve the metadata object names registered inside the file
 mdNames = rn.GetMetadataStructureNames()
