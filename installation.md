@@ -10,28 +10,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 The recommended way to download a copy of REST will be to clone it using the corresponding git command.
 
-### Downloading an official REST release using git
-
-When we download/clone the REST framework repository on our local system, the latest development version will be downloaded.
-We can switch and install any specific REST release by cloning any particular *git tag*.
-
-For example, to create a git branch connected to the REST release v2.2.6, you will do the following.
-
-```
-git clone https://github.com/rest-for-physics/framework rest-framework
-cd rest-framework
-git checkout tags/v2.3.6
-git checkout -b official
-python3 pull-submodules --clean
-```
-
-You may make sure the change took place by checking the status and commit history.
-
-```
-git status
-git log
-```
-
 ## Prerequisites for building REST
 
 The only mandatory prerequisite of REST is ROOT6. Details on the installation of ROOT will be found at the [ROOT's official site](root.cern.ch). 
@@ -273,5 +251,5 @@ If this happens when launching restManager, this may be a problem of ROOT librar
 We found that in some platform the ROOT binary are using unmatched version of interface of some system library. 
 Try to complie ROOT manually, or change another ROOT binary distribution.
 
-[**prev**](index.md)
+[**prev**](downloading.md)
 [**next**](getting-started.md)
