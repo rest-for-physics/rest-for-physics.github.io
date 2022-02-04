@@ -4,22 +4,32 @@ title: Downloading
 nav_order: 15
 ---
 
-These instructions will get you a copy of the project up and running on your local machine in your home directory.
-The recommended way to download a copy of REST will be to clone it using the corresponding git command.
+These instructions will get you a copy of the project on your local machine.
+The recommended way to download a copy of REST is to clone it using the git command line.
 
 ### Downloading an official REST release using git
 
-When we download/clone the REST framework repository on our local system, the latest development version will be downloaded.
-We can switch and install any official REST release by cloning any particular *git tag*.
-We define a REST-for-Physics release as official when the corresponding commit has been tagged using the git system. 
-See also the [versioning page](rest-basics/rest-versioning.md).
-
-For example, to create a git branch connected to the REST release v2.2.6, you will do the following.
+When we download (or clone) the framework repository on our local system we will download 
+the latest development version.
 
 ```
 git clone https://github.com/rest-for-physics/framework rest-framework
+```
+
+We may switch and install any official REST-for-Physics official release by cloning any particular *git tag*.
+A REST-for-Physics release is official when the corresponding commit has been tagged using the git system. 
+See also the [versioning page](rest-basics/rest-versioning.md).
+
+For example, to create a git branch connected to the REST release v2.3.10, you will do the following inside the recently created `rest-framework` directory.
+
+```
 cd rest-framework
 git checkout tags/v2.3.10
+```
+
+Then you may create a branch to identify your local state.
+
+```
 git checkout -b official
 ```
 
@@ -31,16 +41,16 @@ In order to get the full REST-for-Physics functionality, it will be necessary to
 python3 pull-submodules --clean
 ```
 
-You may make sure the change took place by checking the status and commit history.
+To make sure that the change took place check the status and commit history.
 
 ```
 git status
 git log
 ```
 
-### Pulling private project submodules
+The `--clean` flag will assure that the official version of the submodule will be downloaded. If you added changes to any submodule be aware that calling again to `python3 pull-submodules.py --clean` will bring the state of submodules to the official ones at the main repository. REMOVING! any commits you may have at the submodule and that were not pushed to a remote.
 
-If you have pulled changes in a particular submodule, or added your own commits, be aware that calling again to `python3 pull-submodules.py` will bring the state of submodules to the official ones at the main repository. REMOVING! any commits you may have at the submodule and that were not pushed to a remote.
+### Pulling private project submodules
 
 If you have access to private repositories, related to projects or experiments inside the REST community you may pull those executing an additional command.
 
@@ -50,13 +60,13 @@ python3 pull-submodules.py --lfna (or --sjtu)
 
 ### Pulling the latest state of each submodule (non-official)
 
-On top of that, you might get the latest state of each submodule by executing
+On top of that, you might get the latest state (master branch) of each submodule by executing
 
 ```
 python3 pull-submodules.py --lfna --latest
 ```
 
-But, if you wish to remain at the reference/official release, and get just the latest state from a particular submodule, it is possible to move to the given submodule and checkout its `master` branch.
+But, if you wish to remain at the official release, and get just the latest state from a particular submodule, it is possible to move to the given submodule and checkout its `master` branch.
 
 ```
 cd source/libraries/xlib
