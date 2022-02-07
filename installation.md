@@ -94,6 +94,22 @@ restRoot
 Loading library . libRestFramework.dylib
 ```
 
+## REST libraries
+
+The REST framework provides only the structure and support to create and use REST libraries. Few official REST libraries are maintained by the REST community at the [REST-for-Physics](https://github.com/rest-for-physics) namespace. Please, refer to the respective repositories and README.md documentation to get more insights about the features and functionalities of each library.
+
+By listing the contents of the *library* directory inside `rest-framework` (once you executed `pull-submodules.py`) you will quickly identify the available libraries. In order to enable a particular library, just get the library directory name, and use it to define a compilation flag as `-DRESTLIB_NAME`.
+
+For example, in order to compile REST including the `detector` and `raw` libraries, you should update the compilation system set-up by moving again to the build directory and executing:
+
+```
+cd build
+cmake .. -DRESTLIB_DETECTOR=ON -DRESTLIB_RAW=ON
+make -j4 install
+```
+
+**Remark:** Notice that once we pass an option to cmake, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path we provided the first time, and any future calls to `cmake` will assume `detector` and `raw` libraries are enabled.
+
 ## Compilation options
 
 Different options can be passed to the `cmake` command to personalize the REST installation. The following options are available in REST.
@@ -111,9 +127,9 @@ Different options can be passed to the `cmake` command to personalize the REST i
 
 * REST Libraries:
     * **RESTLIB_GEANT4** (Default: OFF) : Enables the use of Geant4 event type and analysis processes in REST. It does not require *Geant4*. But it allows to access previous `restG4` generated data.
-    * **RESTLIB_RAW** (Default: ON) : Enables the use of Raw signal event type and Raw signal conditioning processes in REST.
+    * **RESTLIB_RAW** (Default: OFF) : Enables the use of Raw signal event type and Raw signal conditioning processes in REST.
     * **RESTLIB_DETECTOR** (Default: OFF) : Enables the use of Detector event type and event reconstruction processes in REST.
-    * **RESTLIB_TRACK** (Default: ON) : Enables the use of Track event type and Track identification processes in REST.
+    * **RESTLIB_TRACK** (Default: OFF) : Enables the use of Track event type and Track identification processes in REST.
     * **RESTLIB_AXION** (Default: OFF) : Enables the use of Axion event type and Axion signal calculation processes in REST.
 
 To pass the options to cmake, one need to append "-DXXX=XXX" in the cmake command, for example: `cmake .. -DREST_WELCOME=OFF -DREST_G4=ON`. Once you explicitly set an option, your option choice will become the default choice for future `cmake` executions.
