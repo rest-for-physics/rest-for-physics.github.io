@@ -33,7 +33,7 @@ Then you may create a branch to identify your local state.
 git checkout -b official
 ```
 
-### Downloading official submodules (libraries/projects/examples)
+### Downloading official submodules (recommended)
 
 In order to get the full REST-for-Physics functionality, it will be necessary to download/pull few submodules, including libraries, project examples, or packages.
 
@@ -50,7 +50,7 @@ git log
 
 The `--clean` flag will assure that the official version of the submodule will be downloaded. If you added changes to any submodule be aware that calling again to `python3 pull-submodules.py --clean` will bring the state of submodules to the official ones at the main repository. REMOVING! any commits you may have at the submodule and that were not pushed to a remote.
 
-### Pulling private project submodules
+### Pulling private project submodules (optional)
 
 If you have access to private repositories, related to projects or experiments inside the REST community you may pull those executing an additional command.
 
@@ -74,7 +74,7 @@ git checkout master
 git pull
 ```
 
-### Excluding submodules
+### Excluding submodules (advanced)
 
 It is also possible to exclude submodules from being pulled by using the `--exclude:` directive and comma separated submodule names.
 
@@ -82,7 +82,7 @@ It is also possible to exclude submodules from being pulled by using the `--excl
 python3 pull-submodules.py --exclude:axionlib,geant4lib,restG4
 ```
 
-### Recovering a clean state of rest-framework and submodules
+### Recovering a clean state of rest-framework and submodules (trick)
 
 If you have added modifications to the rest-framework code and/or submodules. It is possible to fully clean your repository to be an identical copy to the one found at the remote repository.
 
