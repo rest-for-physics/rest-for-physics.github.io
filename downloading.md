@@ -60,9 +60,10 @@ python3 pull-submodules.py --lfna (or --sjtu)
 
 ### Pulling the latest state of each submodule (non-official)
 
-On top of that, you might get the latest state (master branch) of each submodule by executing
+On top of that, you might get the latest state (master branch) of each submodule by adding the `--latest` option. But before that you need to change to the master branch
 
 ```
+git checkout master
 python3 pull-submodules.py --latest
 ```
 
