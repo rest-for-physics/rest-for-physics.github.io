@@ -96,7 +96,8 @@ cd rest-framework/scripts
 ./checkoutRemoteBranch.sh minor_fix
 ```
 
-Executing that script will automatically pull the `minor_fix` branch at each repository submodule linked to the main framework repository. If the branch does not exist at the submodule, it will simply skip it and retrieve the master branch.
+Executing that script will automatically pull the `minor_fix` branch at each repository submodule linked to the main framework repository. If the branch does not exist at the submodule, it will simply skip it and retrieve the master branch. We may know contribute to the PR by adding commits, and pushing using `git push` to the remote branch.
+
 
 ### Excluding submodules (advanced)
 
