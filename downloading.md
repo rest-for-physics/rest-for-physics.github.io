@@ -63,7 +63,7 @@ python3 pull-submodules.py --lfna (or --sjtu)
 On top of that, you might get the latest state (master branch) of each submodule by executing
 
 ```
-python3 pull-submodules.py --lfna --latest
+python3 pull-submodules.py --latest
 ```
 
 But, if you wish to remain at the official release, and get just the latest state from a particular submodule, it is possible to move to the given submodule and checkout its `master` branch.
@@ -73,6 +73,30 @@ cd source/libraries/xlib
 git checkout master
 git pull
 ```
+
+### Pulling a development branch (contributing to PRs)
+
+The development of new features, bug corrections, documentation or any other additions to the code occurs in the form of pull-requests, or PR, at the GitHub repositories. PRs are associated to `git branches` that inherit from the master branch and where the development occurs without affecting other users. A PR is a participative and active development thread where developers may comment on the code, contribute, review and approuve the changes that will end up finally at the main repository branch, or master branch.
+
+It is important to understand that the REST-for-Physics ecosystem is composed of several repositories that can be contributed in an independent way. See for example the [contribution guide](https://github.com/rest-for-physics/rawlib/blob/master/CONTRIBUTING.md) for REST-for-Physics libraries, or the [contribution guide](https://github.com/rest-for-physics/framework/blob/master/CONTRIBUTING.md) of the main framework repository. In order to contribute to any existing branch we need to pull the branch at the specific repository where we want to contribute. For example, if we wish to pull the branch `minor_fix` from library `rawlib`, we would move to the repository submodule and do:
+
+```
+cd rest-framework/source/libraries/rawlib
+git pull
+git fetch
+git checkout minor_fix
+```
+
+For minor contributions that could be more than enough. However, it might happen that a particular contribution requires contributions to one or more additional repositories with inter-linked dependencies. For example, we need to add a new method to the [TRestTools](https://sultan.unizar.es/rest/classTRestTools.html) class so that it will be used at a particular PR inside a library. Then, we will need to *pull/create* a branch with **the same name** at each of the inter-connected repositories.
+
+To help retrieving all repositories that are a particular branch we may use a script found at the main framework repository:
+
+```
+cd rest-framework/scripts
+./checkoutRemoteBranch.sh minor_fix
+```
+
+Executing that script will automatically pull the `minor_fix` branch at each repository submodule linked to the main framework repository. If the branch does not exist at the submodule, it will simply skip it and retrieve the master branch.
 
 ### Excluding submodules (advanced)
 
