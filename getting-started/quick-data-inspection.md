@@ -22,7 +22,7 @@ If you use that example make sure you activate the `outputEventStorage` paramete
 
 The different sub-sections will show how to perform those REST file actions with different interfaces, a python environment or script, a C-macro based on ROOT, or opening the file objects using `restRoot` ROOT interface with pre-loaded REST libraries.
 
-- [Go to accessing REST file using python](quick-data-inspection-pyROOT.md).
+- [Go to accessing REST files using python](quick-data-inspection-pyROOT.md).
 - [Go to accessing REST files using restRoot and C-macros](quick-data-inspection-restRoot.md).
 
 {: .no_toc }
