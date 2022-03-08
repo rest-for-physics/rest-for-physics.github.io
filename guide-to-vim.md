@@ -76,9 +76,11 @@ Press ENTER to find the first coincidence, then press the key `n` to go forward 
 
 - **Selecting text** inside VIM is useful so that the command executed
 
-Replacing text
+Replacing text :s/thisone/bythisone/
 
-Moving quickly through the code file. 
+Moving quickly through the code file.  gd
+
+%
 
 Moving to the beginning of the file. Press key “g” twice: gg
 
@@ -95,4 +97,9 @@ CTRL+T
 vim -t file
 
 :make
+
+:cn
+
+:cN
+
 
