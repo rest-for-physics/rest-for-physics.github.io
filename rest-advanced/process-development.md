@@ -116,5 +116,3 @@ In the previous example we see how the `SetWarning` method was called 96 times i
 
 ### Modifying the event data inside a process
 
-### Creating a new process
-
