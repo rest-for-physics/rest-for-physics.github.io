@@ -63,9 +63,11 @@ vim updateTags.sh
 
 This will generate a file at the present location named `tags`. The tags file used by VIM is defined at the `.vimrc` file that you placed previously at your `HOME` directory. Double-check that it is pointing to the right place/path.
 
-### Basic VIM commonly used commands (Memory card)
+### VIM basic commands (Memory card)
+
+This section will cover the most common used actions when working on a development project with VIM. Most of those are covered by the `vimtutor` you followed previously and they will be placed at this section just for completeness. It is important that you got familiar and get used with the commands you learnt at the VIM interactive tutorial. Still it might be handy to remember some of them.
  
- - **Searching text** inside in VIM is straight forward. Press the key “/” then write the text you are looking for:
+**Searching text** inside VIM is straight forward and it is one of my favourite features. How easy is to move through the text using VIM and the search command. Press the key `/` then write the text you are looking for:
 
 ```
 /textToFind
@@ -73,28 +75,61 @@ This will generate a file at the present location named `tags`. The tags file us
 
 Press ENTER to find the first coincidence, then press the key `n` to go forward to the next coincidence of textToFind, or `shift+n` (uppercase n) to go to the previous coincidence.
 
+There are different ways of **inserting text** in our file:
+ - `i` it enters in edition mode
 
-- **Selecting text** inside VIM is useful so that the command executed
+**Deleting text** 
+
+### VIM operating modes
+
+Although you probably remarked this fact after the tutorial, it is important to highlight that VIM defines 3 different operating modes. To exit any of these modes, just press the key `ESC`. When we are not in any of those modes, we will be able to navigate the file with the powerfull VIM shortcuts. By default, when we enter VIM we are *not* in any of those modes.
+
+ 1. **Command mode**: We enter in this mode using the key `:`. We enter in a new infinite universe of possibilities to explore in this mode.
+ 2. **Visual mode**: We will be able to highlight and select text where we will be able to apply any common edition command. I use it mostly for deleting and copy/paste, and why not edit tables, there are three options to enter visual mode.
+	- Enter using character `v`: Just press `v` and move through the text as usual to select text from the character you are placed to the character you are moving.
+	- Enter using `shift+v`: It will highlight full lines. For example, press `shift+v` and move up/down to select any number of lines desired. Then, to delete them, press `x`, go somewhere else, and copy those lines `y`.
+ 3. **Edition mode**: We enter in this mode using different shortcuts, such as `o`, `i`, `a`, `shift+a`, etc.
+
+**Opening files**
+
+**Navigating trhough** different VIM open files.
 
 Replacing text :s/thisone/bythisone/
 
-Moving quickly through the code file.  gd
+#### Moving efficienctly through the file
 
-%
+**Moving quickly through the code file**.  w 0 shift+A gg shift+g CTRL+F CTRL+B n
 
 Moving to the beginning of the file. Press key “g” twice: gg
+
+f and F
 
 Moving to the end of the file. Press shift+g.
 
 Moving backward and forward by half page. Press CTRL+F and CTRL+B
 
+### Using the VIM visual mode
+
+**Selecting text** inside VIM is useful so that the commands are executed
+
+#### Code development shortcuts
+
+gd w
+
+**Moving though the whole project** as defined by the tags file:
 g and CTRL+]
 
 CTRL+T
 
 :ts file
 
-vim -t file
+vim -t keyword
+
+:ls
+
+:bN
+
+**Compiling from VIM**:
 
 :make
 
@@ -102,4 +137,6 @@ vim -t file
 
 :cN
 
+:!
 
+:syntax on
