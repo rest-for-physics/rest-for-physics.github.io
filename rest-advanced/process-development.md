@@ -16,7 +16,44 @@ nav_order: 2
 
 ---
 
-Sometimes a complex analysis will require to include new algorithms for event reconstruction and/or event data conditioning, and/or complex observable calculations that require of the event data at a particular stage of the data processing directly at the processing chain.
+Sometimes a complex analysis will require to include new algorithms for event reconstruction and/or event data conditioning, and/or complex observable calculations that require of the event data at a particular stage of the event data processing. Producing simple processes (including just the necessary to produce a specific action on the event data) will help on maintenance of existing processes, the connectivity between different processes and enhance the potential to build more diverse event data chains.
+
+### Creating a new process
+
+In order to create a new process inside REST-for-Physics framework or a REST-for-Physics library we have developed a macro to help on such task. Remember to name your processes using the prefix imposed by the library where you want to place your process (TODO. missing link to naming conventions and contribution).
+
+For example, to generate a new process template for the REST-for-Physics raw library simply execute the following in your bash shell:
+
+```
+restMakeProcess TRestRawBaselineCorrectionProcess TRestRawSignalEvent TRestRawSignalEvent
+```
+
+or launch `restRoot` and execute the macro invoked by the previous shell command:
+
+```
+restRootMacros
+[0] REST_MakeProcess("TRestRawBaselineCorrectionProcess", "TRestRawSignalEvent", "TRestRawSignalEvent")
+```
+
+This will create two files, a `.cxx` and `.h` files that you need to place at the `src/` and `inc/` directories of your library, respectively.
+
+Once you have placed those, you need to re-run `cmake` so that the compilation system recognizes the new added class. Go to your build directory, and compile your template class:
+
+```
+cd rest-framework/build
+cmake ../
+make -j4 install
+```
+
+Now, check that your new class is recognized by your REST-for-Physics installation:
+
+```
+restRoot
+TRestRawBaselineCorrectionProcess *bl = new TRestRawBaselineCorrectionProcess();
+```
+
+
+### FOLLOWING SECTIONS TOBE reviewed
 
 We encourage new contributions to be pushed to the official [REST repositories](https://github.com/rest-for-physics) after having read our [contribution guide](https://github.com/rest-for-physics/framework/blob/master/CONTRIBUTING.md). It is important to understand that REST provides a way to publish [versioned code](../rest-basics/rest-versioning.md), so that any REST modified code producing publishable results should be uploaded/pushed to the repository in order to warranty the proper integrity and traceability of the data generated with REST. From time to time, a new [official REST release]( http://doi.org/10.5281/zenodo.4922415) is tagged and users are encouraged to only use those version releases for public results.
 
