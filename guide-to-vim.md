@@ -51,7 +51,7 @@ cp basic_scripts/.vimrc $HOME/
 cp basic_scripts/updateTags.sh .
 ```
 
-### Creating a tags file
+#### Creating a tags file
 
 A tags file is a file that registers important elements on your code, such as variable names, methods, class definitions, etc, and identifies in which file those key elements of your code are found, and at which position inside each file. This will allow VIM to extend its features to a real development environment.
 
@@ -90,13 +90,14 @@ Although you probably remarked this fact after the tutorial, it is important to 
 	- Enter using `shift+v`: It will highlight full lines. For example, press `shift+v` and move up/down to select any number of lines desired. Then, to delete them, press `x`, go somewhere else, and copy those lines `y`.
  3. **Edition mode**: We enter in this mode using different shortcuts, such as `o`, `i`, `a`, `shift+a`, etc.
 
-**Opening files**
 
-**Navigating trhough** different VIM open files.
+#### Using the VIM visual mode
+
+**Selecting text** inside VIM is useful so that the commands are executed
 
 Replacing text :s/thisone/bythisone/
 
-#### Moving efficienctly through the file
+### Moving efficienctly through the file
 
 **Moving quickly through the code file**.  w 0 shift+A gg shift+g CTRL+F CTRL+B n
 
@@ -108,13 +109,22 @@ Moving to the end of the file. Press shift+g.
 
 Moving backward and forward by half page. Press CTRL+F and CTRL+B
 
-### Using the VIM visual mode
+### Moving through different open files
 
-**Selecting text** inside VIM is useful so that the commands are executed
+**Opening files**
 
-#### Code development shortcuts
+**Navigating trhough** different VIM open files.
 
-gd w
+:ls
+
+:bN
+
+
+### Coding with VIM
+
+vim -t keyword
+
+gd n
 
 **Moving though the whole project** as defined by the tags file:
 g and CTRL+]
@@ -123,12 +133,9 @@ CTRL+T
 
 :ts file
 
-vim -t keyword
+:syntax on
 
-:ls
-
-:bN
-
+#### Compiling c++ projects from VIM
 **Compiling from VIM**:
 
 :make
@@ -138,5 +145,3 @@ vim -t keyword
 :cN
 
 :!
-
-:syntax on
