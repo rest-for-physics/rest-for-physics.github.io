@@ -27,3 +27,46 @@ git status
 git log
 ```
 
+The `--clean` argument given to `pull-submodules.py` will download the official REST-for-Physics submodules,
+and not the latest commit.
+
+## Getting the latest REST development version
+
+We recommend using REST-for-Physics releases for official data production and data analysis. Still,
+it is a good idea to get the latest version for debugging and developing any required features your analysis
+may require.
+
+In order to get the latest version you should make sure your local repository is placed at the master branch.
+
+```
+cd ~/rest-framework
+git checkout master
+git pull
+```
+
+The previous commands should take you to the latest commit in the master branch at the rest-for-physics/framework
+repository. Double-check using `git status` and `git log` commands.
+
+Now, in order to get the latest master branch from 
+
+```
+python3 pull-submodules --latest
+```
+
+Additionally, if you want to pull the latest development from a particular branch name, you may indicate it at
+the `--latest` argument.
+
+```
+python3 pull-submodules --latest:user_issue_13
+```
+
+The previous command will pull all branches named `user_issue_13` from the submodules. If the submodule
+repository does not contain a branch named `user_issue_13`, then the `master` branch will be downloaded.
+
+Of course, we will also be able to attempt to do it manually for each submodule.
+
+```
+cd source/libraries/detector
+git fetch
+git checkout user_issue_13
+```

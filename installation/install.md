@@ -5,7 +5,7 @@ parent: Installation
 nav_order: 21
 ---
 
-### Installing
+## Main framework compilation and installation
 
 After ROOT6 has been installed in the system, the compilation of REST should be straight forward. 
 Note that it is recommended to compile REST using the same version of g++ compiler used to compile ROOT.
@@ -27,3 +27,27 @@ Execute the following command to configure your `.bashrc` to load REST in your s
  ```
  echo "source ~/rest-framework/install/master/thisREST.sh" >> .bashrc
  ```
+
+### Adding libraries to the REST compilation
+
+The REST framework provides only the structure and support to create and use REST libraries. Few official REST libraries are maintained by the REST community at the [REST-for-Physics](https://github.com/rest-for-physics) namespace. Please, refer to the respective repositories and README.md documentation to get more insights about the features and functionalities of each library.
+
+By listing the contents of the *library* directory inside `rest-framework` (once you executed `pull-submodules.py`) you will quickly identify the available libraries. In order to enable a particular library, just get the library directory name, and use it to define a compilation flag as `-DRESTLIB_NAME`.
+
+For example, in order to compile REST including the `detector` and `raw` libraries, you should update the compilation system set-up by moving again to the build directory and executing:
+
+```
+cd build
+cmake .. -DRESTLIB_DETECTOR=ON -DRESTLIB_RAW=ON
+make -j4 install
+```
+
+If you wish to compile REST-for-Physics with all the public available libraries you may use the `REST_ALL_LIBS` compilation flag.
+
+```
+cd build
+cmake .. -DREST_ALL_LIBS=ON
+make -j4 install
+```
+
+**Remark:** Notice that once we pass an option to cmake, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path we provided the first time, and any future calls to `cmake` will assume `detector` and `raw` libraries are enabled.
