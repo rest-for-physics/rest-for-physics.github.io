@@ -84,7 +84,5 @@ make -j4 install
 
 **Remark:** Notice that once we pass an option to cmake, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path we provided the first time, and any future calls to `cmake` will assume `detector` and `raw` libraries are enabled.
 
----
-
 1. TOC
 {:toc}
