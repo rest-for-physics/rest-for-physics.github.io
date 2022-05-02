@@ -35,36 +35,52 @@ root-config --version
 which root
 ```
 
+## Main framework compilation and installation
 
-## Adding libraries (TODO needs revision - These ideas should be moved to REST-advanced)
+After ROOT6 has been installed in the system, the compilation of REST should be straight forward. 
+Note that it is recommended to compile REST using the same version of g++ compiler used to compile ROOT.
 
-The concrete analysis tasks and experiment setups of REST are kept in individual libraries or packages. 
-The main framework of REST only keeps general event types and analysis algorithms. We need to install
-concrete library(package) to enable the workload, after installing REST mainbody.
+Go to the root directory of your local REST repository, lets name it here `REST_SOURCE_PATH` and execute the following commands.
 
-Both `Library` and `Package` are kind of c++ projects that based on REST. The concept is to make 
-that part of code envolve independently with REST framework, reducing the changing of REST framework.
-They are usually kept in different git repositories. `Library` provides a library with new event types and 
-analysis algorithms. `Package` provides not only libraries but also executables. They are installed to
-REST installation path.
+```
+cd ~/rest-framework
+mkdir build
+cd build
+cmake .. -DINSTALL_PREFIX=../install/master/ 
+make -j4 install
+```
 
-Some of the libraries/packages are provided as git submodule of REST, and can be installed together 
-with REST framework, just by adding compilation options to cmake.
+After all the compilation and installation process ends, you will end up with an installed REST version at `~/rest-framework/install/master/`.
 
-The following is a list of REST libraries/packages:
+Execute the following command to configure your `.bashrc` to load REST in your system environment each time you open a new shell terminal.
 
-Name         | Type       |  cmake flag (=default)  | repository
--------------|------------|-------------------------|------------
-restMuonLib  |   library  |                         | https://gitlab.pandax.sjtu.edu.cn/pandax-iii/restmuonlib
-restDecay0   |   library  |   -DREST_DECAY0=OFF     | 
-RestAxionLib |   library  |   -DREST_AXION_LIB=OFF  | https://lfna.unizar.es/iaxo/RestAxionLib
-RestGeant4Lib|   library  |   -DREST_GEANT4_LIB=ON  | https://lfna.unizar.es/rest-development/RestGeant4Lib
-restG4       |   package  |   -DREST_G4=OFF         | 
-restP3DB     |   package  |                         | https://gitlab.pandax.sjtu.edu.cn/pandax-iii/restp3db
-restSQL      |   package  |   -DREST_SQL=ON         | https://lfna.unizar.es/rest-development/restsql
-restWeb      |   package  |                         | https://lfna.unizar.es/rest-development/restWeb
+ ```
+ echo "source ~/rest-framework/install/master/thisREST.sh" >> .bashrc
+ ```
 
-Note that if you changed the code, the **file modification** and **file deletion** will be reverted, but the **file creation** will be kept. 
+### Adding libraries to the REST compilation
+
+The REST framework provides only the structure and support to create and use REST libraries. Few official REST libraries are maintained by the REST community at the [REST-for-Physics](https://github.com/rest-for-physics) namespace. Please, refer to the respective repositories and README.md documentation to get more insights about the features and functionalities of each library.
+
+By listing the contents of the *library* directory inside `rest-framework` (once you executed `pull-submodules.py`) you will quickly identify the available libraries. In order to enable a particular library, just get the library directory name, and use it to define a compilation flag as `-DRESTLIB_NAME`.
+
+For example, in order to compile REST including the `detector` and `raw` libraries, you should update the compilation system set-up by moving again to the build directory and executing:
+
+```
+cd build
+cmake .. -DRESTLIB_DETECTOR=ON -DRESTLIB_RAW=ON
+make -j4 install
+```
+
+If you wish to compile REST-for-Physics with all the public available libraries you may use the `REST_ALL_LIBS` compilation flag.
+
+```
+cd build
+cmake .. -DREST_ALL_LIBS=ON
+make -j4 install
+```
+
+**Remark:** Notice that once we pass an option to cmake, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path we provided the first time, and any future calls to `cmake` will assume `detector` and `raw` libraries are enabled.
 
 ---
 
