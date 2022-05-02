@@ -2,9 +2,12 @@
 layout: default
 title: Installation
 nav_order: 20
+has_children: true
+permalink: /installation
 ---
 
-**TODO. This section might need strong revision. Still you may find good clues on how to proceed, and the README.md at the main repository should still provide the necessary basic instructions to install REST.**
+
+Introduction TOBE written
 
 These instructions will get you a copy of the project up and running on your local machine in your home directory.
 
@@ -35,37 +38,6 @@ Before starting the REST installation, make sure you are running the desired ROO
 root-config --version
 which root
 ```
-
-## Installing
-
-After ROOT6 has been installed in the system, the compilation of REST should be straight forward. 
-Note that it is recommended to compile REST using the same version of g++ compiler used to compile ROOT.
-
-Go to the root directory of your local REST repository, lets name it here `REST_SOURCE_PATH` and execute the following commands.
-
-```
-cd ~/rest-framework
-mkdir build
-cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=../install/master/ 
-make -j4 install
-```
-
-After all the compilation and installation process ends, you will end up with an installed REST version at `~/rest-framework/install/master/`.
-
-Execute the following command to configure your `.bashrc` to load REST in your system environment each time you open a new shell terminal.
-
- ```
- echo "source ~/rest-framework/install/master/thisREST.sh" >> .bashrc
- ```
-
-## Unit Testing
-
-REST uses [GoogleTest](https://google.github.io/googletest/) as its testing framework. Unit testing is enabled via the `-DTEST=ON` flag and disabled by default. Required dependencies for testing are managed via [CMake FetchContent](https://cmake.org/cmake/help/git-master/module/FetchContent.html) so the user does not need to install any additional dependencies.
-
-To run all tests go to the build directory (after a successful build) and type: `ctest`. All general tests will be ran for all the compiled modules. You can also run only select tests via the `--gtest_filter=TestPrefix*` which will run only tests whose names match the expression.
-
-Passing all tests is required for all REST release versions and it is part of the pipeline. It is highly encouraged for contributors to run tests before pushing changes. Currently it recommended to use the `-DTEST=ON` only for running the tests and not enabling it otherwise.
 
 ## Basic tests of the REST installation
 
@@ -274,5 +246,10 @@ If this happens when launching restManager, this may be a problem of ROOT librar
 We found that in some platform the ROOT binary are using unmatched version of interface of some system library. 
 Try to complie ROOT manually, or change another ROOT binary distribution.
 
-[**prev**](downloading.md)
-[**next**](getting-started.md)
+---
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
