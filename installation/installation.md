@@ -9,7 +9,7 @@ permalink: /installation
 
 The instructions in this section will get you a copy of the project up and running on your local machine in your home directory.
 
-## Prerequisites for building REST
+### Prerequisites for building REST
 {: .no_toc }
 
 The only mandatory prerequisite of REST is ROOT6. Details on the installation of ROOT will be found at the [ROOT's official site](root.cern.ch). 
@@ -35,7 +35,7 @@ root-config --version
 which root
 ```
 
-## Main framework compilation and installation
+### Main framework compilation and installation
 
 After ROOT6 has been installed in the system, the compilation of REST should be straight forward. 
 Note that it is recommended to compile REST using the same version of g++ compiler used to compile ROOT.
@@ -83,9 +83,6 @@ make -j4 install
 **Remark:** Notice that once we pass an option to cmake, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path we provided the first time, and any future calls to `cmake` will assume `detector` and `raw` libraries are enabled.
 
 ---
-
-## Table of contents
-{: .no_toc .text-delta }
 
 1. TOC
 {:toc}

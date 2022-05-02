@@ -5,7 +5,10 @@ parent: Installation
 nav_order: 27
 ---
 
-## Trouble shooting
+### Trouble shooting
+
+This page offers a list with the most common problems we face when we are trying to compile
+and install REST-for-Physics.
 
 ### Garfield not found
 
