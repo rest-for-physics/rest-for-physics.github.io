@@ -36,4 +36,3 @@ We acknowledge support from the the European Research Council (ERC) under the Eu
 
 ![Insitution logos](assets/images/institution_logos.png)
 
-

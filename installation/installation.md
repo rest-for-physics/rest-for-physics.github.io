@@ -2,35 +2,16 @@
 layout: default
 title: Installation
 nav_order: 20
+has_children: true
+permalink: /installation
 ---
 
-**TODO. This section might need strong revision. Still you may find good clues on how to proceed, and the README.md at the main repository should still provide the necessary basic instructions to install REST.**
+
+Introduction TOBE written
 
 These instructions will get you a copy of the project up and running on your local machine in your home directory.
 
 The recommended way to download a copy of REST will be to clone it using the corresponding git command.
-
-### Downloading an official REST release using git
-
-When we download/clone the REST framework repository on our local system, the latest development version will be downloaded.
-We can switch and install any specific REST release by cloning any particular *git tag*.
-
-For example, to create a git branch connected to the REST release v2.2.6, you will do the following.
-
-```
-git clone https://github.com/rest-for-physics/framework rest-framework
-cd rest-framework
-git checkout tags/v2.3.6
-git checkout -b official
-python3 pull-submodules --clean
-```
-
-You may make sure the change took place by checking the status and commit history.
-
-```
-git status
-git log
-```
 
 ## Prerequisites for building REST
 
@@ -58,28 +39,6 @@ root-config --version
 which root
 ```
 
-## Installing
-
-After ROOT6 has been installed in the system, the compilation of REST should be straight forward. 
-Note that it is recommended to compile REST using the same version of g++ compiler used to compile ROOT.
-
-Go to the root directory of your local REST repository, lets name it here `REST_SOURCE_PATH` and execute the following commands.
-
-```
-cd ~/rest-framework
-mkdir build
-cd build
-cmake .. -DINSTALL_PREFIX=../install/master/ 
-make -j4 install
-```
-
-After all the compilation and installation process ends, you will end up with an installed REST version at `~/rest-framework/install/master/`.
-
-Execute the following command to configure your `.bashrc` to load REST in your system environment each time you open a new shell terminal.
-
- ```
- echo "source ~/rest-framework/install/master/thisREST.sh" >> .bashrc
- ```
 
 
 ## Basic tests of the REST installation
@@ -273,5 +232,10 @@ If this happens when launching restManager, this may be a problem of ROOT librar
 We found that in some platform the ROOT binary are using unmatched version of interface of some system library. 
 Try to complie ROOT manually, or change another ROOT binary distribution.
 
-[**prev**](index.md)
-[**next**](getting-started.md)
+---
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
