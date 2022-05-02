@@ -7,11 +7,7 @@ permalink: /installation
 ---
 
 
-Introduction TOBE written
-
-These instructions will get you a copy of the project up and running on your local machine in your home directory.
-
-The recommended way to download a copy of REST will be to clone it using the corresponding git command.
+The instructions in this section will get you a copy of the project up and running on your local machine in your home directory.
 
 ## Prerequisites for building REST
 
@@ -19,8 +15,7 @@ The only mandatory prerequisite of REST is ROOT6. Details on the installation of
 One may directly find binary distributions on its [download page](https://root.cern.ch/downloading-root). 
 If not, try to compile and install it manually.
 
-We provide a script inside `scripts/installation/installROOT.sh`, to automatize the process of downloading, compiling and installing a predefined version of ROOT in your local system.
-If your system comes installed with all the [ROOT prerequisites](https://root.cern.ch/build-prerequisites) the installation using this script should be quite smooth.
+We provide a script inside `scripts/installation/installROOT.sh`, to automatize the process of downloading, compiling and installing a predefined version of ROOT in your local system. If your system comes installed with all the [ROOT prerequisites](https://root.cern.ch/build-prerequisites) the installation using this script should be smooth.
 
 Example of installing ROOT6 using REST installation script.
 
