@@ -12,7 +12,7 @@ The instructions in this section will get you a copy of the project up and runni
 ### Prerequisites for building REST
 {: .no_toc }
 
-The only mandatory prerequisite of REST is ROOT6. Details on the installation of ROOT will be found at the [ROOT's official site](root.cern.ch). 
+The only mandatory prerequisite of REST is ROOT6. Details on the installation of ROOT will be found at the [ROOT's official site](https://root.cern.ch). 
 One may directly find binary distributions on its [download page](https://root.cern.ch/downloading-root). 
 If not, try to compile and install it manually.
 
