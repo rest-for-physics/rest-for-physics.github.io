@@ -16,6 +16,9 @@ The only mandatory prerequisite of REST is ROOT6. Details on the installation of
 One may directly find binary distributions on its [download page](https://root.cern.ch/downloading-root). 
 If not, try to compile and install it manually.
 
+{: .warning} The best choice is to compile ROOT6 from source. If ROOT6 compiles without problems, REST-for-Physics will do it.
+
+
 We provide a script inside `scripts/installation/installROOT.sh`, to automatize the process of downloading, compiling and installing a predefined version of ROOT in your local system. If your system comes installed with all the [ROOT prerequisites](https://root.cern.ch/build-prerequisites) the installation using this script should be smooth.
 
 Example of installing ROOT6 using REST installation script.
