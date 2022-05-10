@@ -129,7 +129,12 @@ for n in range(nEntries):
 	##
 	## We do whatever we need with g4Ev and aT for each event entry
 	##
+	## For example:
+	for t in range( g4Ev.GetNumberOfTracks() )
+	    print( "Entry: " + str(n) + " track: " + str(t) + " Partice: " + str(g4Ev.GetTrack(t).GetParticleName())
 ```
+
+To access specific events, check the available methods for an event type. For example, for geant4 event we will be willing to access a [TRestGeant4Event](https://sultan.unizar.es/rest/classTRestGeant4Event.html) and the tracks stored inside, encapsulated inside a [TRestGeant4Track](https://sultan.unizar.es/rest/classTRestGeant4Track.html).
 
 ### Collecting specific observable values
 
