@@ -77,6 +77,17 @@ print ("--------------------------------------------------------------------")
 rn.GetMetadata( mdNames[1] ).PrintMetadata() 
 ```
 
+### Generating an histogram using the analysis tree
+
+Using the instance of TRestRun, `rn`, we can gain access to the analysis tree. The analysis tree contains all the observables added during the processing of the data, and it can be operated as a standard ROOT TTree object. Important to read the [ROOT TTree documentation!](https://root.cern.ch/root/htmldoc/guides/users-guide/Trees.html).
+
+Drawing an observable named `g4Ana_Edep` could be achieved by simply:
+
+```
+rn.GetAnalysisTree()->Draw("g4Ana_Edep")
+```
+
+
 ### Accessing the data stored at a specific event entry
 
 From the *rn* instance we may also get access to the event data and the analysis tree data. We just get the pointers to those objects using the `TRestRun` methods. Then, we may get any entry number found inside the file. Note that the entry number is just the position of the entry within the file, but it does not serve to fully identify the event. The event ID, which might take any integer value, is unique, and it can be used to identify an event between different files.
@@ -109,7 +120,8 @@ aT.PrintObservables()
 
 Note that in order to register the event data inside our analysis file it is necesary to enable the parameter `outputEventStorage`. If this parameter is not specified, its default will be normally `on`.
 
-Obviously, now we could iterate over all the events to get specific information and perform a dedicated analysis using the event or analysis tree methods.
+### Iterating over the events inside a REST file
+Obviously, once we got an instance of the run `rn` we may iterate over all the events to get specific information and perform a dedicated analysis using the event or analysis tree methods. Each time we call the `TRestRun::GetEntry` method, the `aT` and `g4Ev` objects linked to the run will be updated with the new event and analysis information for that event entry.
 
 ```python
 for n in range(nEntries):
