@@ -77,7 +77,7 @@ print ("--------------------------------------------------------------------")
 rn.GetMetadata( mdNames[1] ).PrintMetadata() 
 ```
 
-### Generating an histogram using the analysis tree
+### Generating a histogram using the analysis tree
 
 Using the instance of TRestRun, `rn`, we can gain access to the analysis tree. The analysis tree contains all the observables added during the processing of the data, and it can be operated as a standard ROOT TTree object. Important to read the [ROOT TTree documentation!](https://root.cern.ch/root/htmldoc/guides/users-guide/Trees.html).
 
