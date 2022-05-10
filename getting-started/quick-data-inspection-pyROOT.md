@@ -37,7 +37,7 @@ ROOT.gSystem.Load("libRestGeant4.so")
 
 ### Opening a ROOT file generated with REST
 
-Once the required libraries have been loaded, the first main class we need to know in REST is [TRestRun](https://sultan.unizar.es/rest/classTRestRun.html). TRestRun defines few helper methods that centralize the access to the event data, the analysis tree and event data. It can be used to open a ROOT file generated with REST, and access the data in a coherent way.
+Once the required libraries have been loaded, the first main class we need to know in REST is [TRestRun](https://sultan.unizar.es/rest/classTRestRun.html). TRestRun defines few helper methods that centralize the access to the event data, the analysis tree and the metadata objects stored inside the file. `TRestRun` can be used to open a ROOT file generated with REST, and access the data in a coherent way.
 
 The following example shows how to create a `TRestRun` instance , named *rn* in this script, print the run metadata information, and get the number of event entries stored inside the file.
 
