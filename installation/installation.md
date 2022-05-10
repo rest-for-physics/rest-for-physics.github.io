@@ -50,7 +50,7 @@ Go to the root directory of your local REST repository, lets name it here `REST_
 cd ~/rest-framework
 mkdir build
 cd build
-cmake .. -DINSTALL_PREFIX=../install/master/ 
+cmake .. -DCMAKE_INSTALL_PREFIX=../install/master/ 
 make -j4 install
 ```
 
