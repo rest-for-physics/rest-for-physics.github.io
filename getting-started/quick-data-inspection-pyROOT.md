@@ -118,3 +118,15 @@ for n in range(nEntries):
 	## We do whatever we need with g4Ev and aT for each event entry
 	##
 ```
+
+### Collecting specific observable values
+
+Once we get access to the analysis tree in an iterative way we may recover the value of any of the observables inside the tree and do any calculation we are willing to, create a custom histogram, draw them, print their value, etc.
+
+```python
+for n in range(nEntries):
+	rn.GetEntry(n)
+	
+	obsValue = aT.GetDblObservableValue("g4Ana_totalEdep")
+	print("g4Ana_totaleEdep: " + str(obsValue) + " keV" )
+```
