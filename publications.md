@@ -13,4 +13,5 @@ nav_order: 90
 
 # Presentations
 
-- *REST v2.0 : A data analysis and simulation framework for micro-patterned readout detectors.*, [Javier Galan, 2016-Dec, 8th Symposium on Large TPCs for low-energy rare event detection](https://indi.to/3hzcz).
+- *REST v2.0 : A data analysis and simulation framework for micro-patterned readout detectors.*, [Javier Galan, 2016-Dec, 8th Symposium on Large TPCs for low-energy rare event detection, Paris](https://indi.to/3hzcz).
+- *REST-for-Physics*, [Luis Obis, 2022-May, ROOT Users Workshop, FermiLab](https://indico.fnal.gov/event/23628/contributions/240755/).
