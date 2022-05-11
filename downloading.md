@@ -38,7 +38,7 @@ git checkout -b official
 In order to get the full REST-for-Physics functionality, it will be necessary to download/pull few submodules, including libraries, project examples, or packages.
 
 ```
-python3 pull-submodules --clean
+python3 pull-submodules.py --clean
 ```
 
 To make sure that the change took place check the status and commit history.
