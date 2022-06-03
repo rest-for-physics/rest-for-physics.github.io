@@ -1,0 +1,26 @@
+---
+layout: default
+title: REST in Windows
+parent: Installation
+nav_order: 21
+---
+
+## REST in Windows
+
+We recommend a UNIX environment for development of REST-for-Physics libraries since most of the active developers maintain and contribute to REST using UNIX development environments. Still it exists the possibility to run and use REST inside Microsoft Windows.
+
+Here you will find a quick recipe to get REST up and running in Windows. At least this is what I had to do to get it working.
+
+1. Install Microsoft Visual Studio 2022 (C++ developper tools)
+
+2. Execute Visual Studio and select to clone the REST-for-physics repository: https://github.com/rest-for-physics/framework.git
+
+3. Open a terminal and place yourself at the directory where the repository was downloaded.
+
+4. Install python (You will be prompted with an installation window as soon as you try to execute the command).
+
+5. Install git for Windows and add the binary PATH manually, see the following [link](https://stackoverflow.com/questions/4492979/git-is-not-recognized-as-an-internal-or-external-command).
+
+6. Download ROOT 6.26.02 binary for Visual Studio 2022 and 64 bits. Unzip it to a directory of your convenience, in the following this directory will be referred as `ROOT_PATH`.
+
+6. Inside Visual Studio enter into the top menu `Project->CMake Settings` and add the variable `ROOT_DIR` pointing to your downloaded ROOT binary path `ROOT_PATH/cmake`
