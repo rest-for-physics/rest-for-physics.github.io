@@ -34,6 +34,7 @@ Therefore, if we want to introduce the latest commits of a particular library in
 
 To make sure, we check the latest commit where the `CMakeLists.txt` file was updated to increase the library version number, and we identify any future commits after that last version was fixed. If we find commits or changes introduced after the last version was fixed, then we can create a new version release.
 
+### Creating a new branch to update the library version release
 We will need to create a new branch where to push the new version update, making sure the new branch inherits from the latest master. We will use the [rawlib](https://github.com/rest-for-physics/rawlib) to illustrate the code examples, where we assume the [framework](https://github.com/rest-for-physics/framework) repository has been cloned to the local `rest-framework` directory.
 
 ```
@@ -68,10 +69,17 @@ git push --tags
 
 Then, perform the following actions at the GitHub repository site.
 
-* Go to the corresponding library GitHub page, and create a new pull-request (PR) to merge the new branch `release_v1.4` into master.
-* Go to the tags section, and press edit at the recent tag just created, inserting few bullets creating a list summarizing the changes since the last version. Those points should give an overview, or meaningfull representation, of the new commits.
+### Merge the new library tag into master
+Go to the corresponding library GitHub page, and create a new pull-request (PR) to merge the new branch `release_v1.4` into master.
 
-You must assign a member of REST as a reviewer inside the generated PR. The reviewer will approve the new version generation. The reviewer might be any member, but you might select any available member at the `library_dev` team, selecting the group `rest-for-physics/library_dev`. Once you merge the PR to the `master` branch, we are done! Repeat this step for any library that you want to be updated at the official REST release.
+You must assign a member of REST as a reviewer inside the generated PR. The reviewer will approve the new version generation. The reviewer might be any member, but you might select any available member at the `library_dev` team, selecting the group `rest-for-physics/library_dev`. 
+
+Once you merge the PR to the `master` branch, we are almost done!
+
+### Create release notes for the new library. 
+Go to the tags section inside GitHub, and press edit at the recent tag just created, inserting few bullets creating a list summarizing the changes since the last version. Those points should give an overview, or meaningfull representation, of the new commits.
+
+Repeat this step for any library that you want to be updated at the official REST release.
 
 It must be noted then that library versions might be updated at any time, creating new version numbers with small updates. Then, the new library version will only be part of the official REST framework release if the corresponding library submodule reference is updated, as described in the following section.
 
