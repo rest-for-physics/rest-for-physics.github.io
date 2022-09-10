@@ -41,6 +41,7 @@ In order to get the full REST-for-Physics functionality, it will be necessary to
 python3 pull-submodules.py --clean
 ```
 
+
 To make sure that the change took place check the status and commit history.
 
 ```
@@ -49,6 +50,16 @@ git log
 ```
 
 The `--clean` flag will assure that the official version of the submodule will be downloaded. If you added changes to any submodule be aware that calling again to `python3 pull-submodules.py --clean` will bring the state of submodules to the official ones at the main repository. REMOVING! any commits you may have at the submodule and that were not pushed to a remote.
+
+### Pulling only libraries
+
+If you wish to download only libraries it is possible to do:
+
+```
+python3 pull-submodules.py --onlylibs
+```
+
+You may check all the available options executing `pull-submodules.py` without arguments.
 
 ### Pulling private project submodules (optional)
 
