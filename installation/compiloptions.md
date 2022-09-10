@@ -26,5 +26,6 @@ Different options can be passed to the `cmake` command to personalize the REST i
     * **RESTLIB_DETECTOR** (Default: OFF) : Enables the use of Detector event type and event reconstruction processes in REST.
     * **RESTLIB_TRACK** (Default: OFF) : Enables the use of Track event type and Track identification processes in REST.
     * **RESTLIB_AXION** (Default: OFF) : Enables the use of Axion event type and Axion signal calculation processes in REST.
+    * **REST_ALL_LIBS** (Default: OFF) : It enables all REST libraries with a single flag. 
 
 To pass the options to cmake, one need to append "-DXXX=XXX" in the cmake command, for example: `cmake .. -DREST_WELCOME=OFF -DREST_G4=ON`. Once you explicitly set an option, your option choice will become the default choice for future `cmake` executions.
