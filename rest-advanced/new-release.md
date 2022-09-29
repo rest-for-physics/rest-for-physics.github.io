@@ -63,18 +63,23 @@ Then, commit the changes, create a new tag and push to the repository
 git add CMakeLists.txt
 git commit -m "Fixing release 1.4"
 git push
-git tag -a v1.4 -m "v1.4"
-git push --tags
 ```
 
 Then, perform the following actions at the GitHub repository site.
 
-### Merge the new library tag into master
+### Merge the new library into master and tag it
 Go to the corresponding library GitHub page, and create a new pull-request (PR) to merge the new branch `release_v1.4` into master.
 
 You must assign a member of REST as a reviewer inside the generated PR. The reviewer will approve the new version generation. The reviewer might be any member, but you might select any available member at the `library_dev` team, selecting the group `rest-for-physics/library_dev`. 
 
-Once you merge the PR to the `master` branch, we are almost done!
+Once you merge the PR to the `master` branch, place yourself at the local `master` branch, pull the latest (recent merge) changes, and tag it.
+
+```
+git checkout master
+git pull
+git tag -a v1.4 -m "v1.4"
+git push --tags
+```
 
 ### Create release notes for the new library. 
 Go to the tags section inside GitHub, and press edit at the recent tag just created, inserting few bullets creating a list summarizing the changes since the last version. Those points should give an overview, or meaningfull representation, of the new commits.
