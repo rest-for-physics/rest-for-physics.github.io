@@ -21,6 +21,7 @@ If not, try to compile and install it manually.
 
 We provide a script inside `scripts/installation/installROOT.sh`, to automatize the process of downloading, compiling and installing a predefined version of ROOT in your local system. If your system comes installed with all the [ROOT prerequisites](https://root.cern.ch/build-prerequisites) the installation using this script should be smooth.
 
+
 Example of installing ROOT6 using REST installation script.
 
 ```
@@ -86,6 +87,7 @@ make -j4 install
 ```
 
 **Remark:** Notice that once we pass an option to cmake, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path we provided the first time, and any future calls to `cmake` will assume `detector` and `raw` libraries are enabled.
+
 
 1. TOC
 {:toc}
