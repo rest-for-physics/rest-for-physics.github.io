@@ -13,23 +13,21 @@ The instructions in this section will get you a copy of the project up and runni
 {: .no_toc }
 
 The only mandatory prerequisite of REST is ROOT6. Details on the installation of ROOT will be found at the [ROOT's official site](https://root.cern.ch). 
-One may directly find binary distributions on its [download page](https://root.cern.ch/downloading-root). 
-If not, try to compile and install it manually.
+One may directly find binary distributions on its [download page](https://root.cern.ch/downloading-root), although **the best choice is to compile ROOT6 from source**. If ROOT6 compiles without problems, REST-for-Physics will usually compile without major issues.
 
-{: .warning} The best choice is to compile ROOT6 from source. If ROOT6 compiles without problems, REST-for-Physics will do it.
+We provide a script `installROOT.sh` inside the directory `scripts/installation/` to automatize the process of downloading, compiling and installing a predefined version of ROOT in your local system. If your system comes installed with all the [ROOT prerequisites](https://root.cern/install/dependencies/) the installation using this script should be smooth. Problems during the ROOT compilation are usually solved by indicating the appropriate paths for python, or using the appropriate compilation flags. It is recommended to have a look to the `installROOT.sh` script to identify the REST community recommended ROOT version, and the compilation flags that we tipically use.
 
-
-We provide a script inside `scripts/installation/installROOT.sh`, to automatize the process of downloading, compiling and installing a predefined version of ROOT in your local system. If your system comes installed with all the [ROOT prerequisites](https://root.cern.ch/build-prerequisites) the installation using this script should be smooth.
-
-
-Example of installing ROOT6 using REST installation script.
+Thus, downloading, compiling and installing ROOT6 using the REST installation script is as simple as execute the following and cross your finger.
 
 ```
 cd rest-framework/scripts/installation/  
 ./installROOT.sh  
 ```
 
-The script will install a particular version of ROOT defined inside the script, and it will add to your bashrc a line to load ROOT each time you start a new terminal session.
+This script may fail, if it is the case, do not run the script again, just go to the generated build directory, usually at `$HOME/apps/root-xxx/build`, and try to compile again using `cmake ..` and `make -j install`. Copy/paste the errors on google to identify the cause of the error, or direclty post your issue at the [ROOT Forum](https://root-forum.cern.ch) they will reply quickly,
+
+If the script is sucessful it will install a particular version of ROOT defined inside the script, and it will add to your `.bashrc` a line to load ROOT each time you start a new terminal session.
+
 ROOT will be installed at `$HOME/apps`. Feel free to modify the `installROOT.sh` script to choose a different installation directory or ROOT version.
 
 Before starting the REST installation, make sure you are running the desired ROOT version and binary.
