@@ -31,3 +31,5 @@ Here you will find a quick recipe to get REST up and running in Windows. At leas
 
 10. To re-run cmake just go to "Project->Configure cache", and to build press F7.
 
+
+{: .note } The [PR#231](https://github.com/rest-for-physics/framework/pull/231) inside the framework might give some light in case of problems. If you find issues and solutions following the previous instructions do not hesitate to update them.
