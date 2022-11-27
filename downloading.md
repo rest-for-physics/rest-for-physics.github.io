@@ -131,6 +131,3 @@ python3 pull-submodules.py --clean
 
 If there is any untracked content you might still need to `git clean -d -f` to remove untracked items. If any untracked items or modified files are found at your source repository during compilation the `fCleanState` flag at `TRestMetadata` will be set to `OFF`.
 
-{: .warning }
-> This website documents the features of the current `main` branch of the Just the Docs theme.
-
