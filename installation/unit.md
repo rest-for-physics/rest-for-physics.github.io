@@ -2,7 +2,7 @@
 layout: default
 title: Unit testing
 grand_parent: Installation
-parent:Compilation options
+parent: Compilation options
 ---
 
 ## Unit Testing
