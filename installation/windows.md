@@ -33,7 +33,8 @@ Here you will find a quick recipe to get REST up and running in Windows. At leas
 
 
 {: .note } 
-The [PR#231](https://github.com/rest-for-physics/framework/pull/231) inside the framework might give some light in case of problems. If you find issues and solutions following the previous instructions do not hesitate to update them.
+The [PR#231](https://github.com/rest-for-physics/framework/pull/231) inside the framework repository might give some light in case of problems.
+ 
+{: important }
+If you succeed to install REST in Windows and think the previous instructions are not accurate enough, please do not hesitate to update them.
 
-{: .warning } 
-> The [PR#231](https://github.com/rest-for-physics/framework/pull/231) inside the framework might give some light in case of problems. If you find issues and solutions following the previous instructions do not hesitate to update them.
