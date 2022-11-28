@@ -10,7 +10,7 @@ permalink: /installation
 The instructions in this section will get you a copy of the project up and running on your local machine in your home directory.
 
 {: note } 
-The instructions found on this page should be common to any system based on UNIX. Check [Windows specific installation instructions here](https://rest-for-physics.github.io/installation/windows.html).
+> The instructions found on this page should be common to any system based on UNIX. Check [Windows specific installation instructions here](https://rest-for-physics.github.io/installation/windows.html).
 
 ### Prerequisites for building REST
 {: .no_toc }
