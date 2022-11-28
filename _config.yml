@@ -26,6 +26,7 @@ ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (t
 
 callouts:
   highlight:
+    title: Highlight
     color: yellow
   important:
     title: Important
