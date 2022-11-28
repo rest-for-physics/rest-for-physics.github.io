@@ -25,8 +25,19 @@ ga_tracking: G-N6WX17N2RD
 ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true by default)
 
 callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
   warning:
-    title: Danger
+    title: Warning
     color: red
     
    
