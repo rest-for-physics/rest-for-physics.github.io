@@ -29,4 +29,8 @@ Here you will find a quick recipe for a minimal REST build in MacOs.
 
 9. In order to use that particular REST compilation you need to load it executing: `source ../install/thisREST.sh`.
 
-{: .highlight } For additional details enabling REST libraries and packages check the common instructions found at the [installation pages](https://rest-for-physics.github.io/installation).
+{: .important } 
+For additional details enabling REST libraries and packages check the common instructions found at the [installation pages](https://rest-for-physics.github.io/installation).
+
+{: .highlight } 
+For additional details enabling REST libraries and packages check the common instructions found at the [installation pages](https://rest-for-physics.github.io/installation).
