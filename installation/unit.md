@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Unit testing
-parent:Compilation options
 grand_parent: Installation
-nav_order: 22
+parent:Compilation options
 ---
 
 ## Unit Testing

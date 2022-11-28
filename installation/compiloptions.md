@@ -2,6 +2,7 @@
 layout: default
 title: Compilation options
 parent: Installation
+has_children: true
 nav_order: 25
 ---
 
