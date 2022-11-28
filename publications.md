@@ -17,3 +17,26 @@ nav_order: 90
 - *REST-for-Physics*, [Luis Obis, 2022-May, ROOT Users Workshop, FermiLab](https://indico.fnal.gov/event/23628/contributions/240755/).
 - *REST v2.0 : A data analysis and simulation framework for micro-patterned readout detectors.*, [Javier Galan, 2016-Dec, 8th Symposium on Large TPCs for low-energy rare event detection, Paris](https://indi.to/3hzcz).
 
+{: .note } TestingNote
+
+{: .note } 
+TestingNote2
+
+{: .note } 
+> TestingNote3
+
+{: .highlight } TestingHighlight
+
+{: .highlight } 
+TestingHighLight2
+
+{: .highlight } 
+> TestingHighlight3
+
+{: .important } TestingImportant
+
+{: .important } 
+TestingImportant2
+
+{: .important } 
+> TestingImportant3
