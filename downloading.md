@@ -48,15 +48,16 @@ In order to download the state of the submodule as it was at a particular releas
 python3 pull-submodules.py --clean
 ```
 
+
+{: .warning }
+If you made any changes to any submodule be aware that executing `python3 pull-submodules.py --clean` will bring the state of the framework and all  its submodules to the official state. Therefore **removing** any local commits that were not yet pushed to a remote repository.
+
 To make sure that the change took place check the status and commit history.
 
 ```
 git status
 git log
 ```
-
-{: .warning }
-If you added changes to any submodule be aware that calling again to `python3 pull-submodules.py --clean` will bring the state of submodules to the official ones at the main repository. REMOVING! any commits you may have at the submodule and that were not pushed to a remote.
 
 ### Pulling only libraries
 
