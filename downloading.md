@@ -33,14 +33,18 @@ Then you may create a branch to identify your local state.
 git checkout -b official
 ```
 
-### Downloading official submodules (recommended)
+The script `pull-submodules.py` (available at the root of the framework repository) will allow you to download any additional libraries and packages. Different uses of this script will be described in the following sections.
+
+{: .hint }
+Execute `python3 pull-submodules.py --help` to discover all the options available.
+
+### Downloading official submodules (linked to a particular release)
 
 In order to get the full REST-for-Physics functionality, it will be necessary to download/pull few submodules, including libraries, project examples, or packages.
 
 ```
 python3 pull-submodules.py --clean
 ```
-
 
 To make sure that the change took place check the status and commit history.
 
@@ -49,7 +53,7 @@ git status
 git log
 ```
 
-The `--clean` flag will assure that the official version of the submodule will be downloaded. If you added changes to any submodule be aware that calling again to `python3 pull-submodules.py --clean` will bring the state of submodules to the official ones at the main repository. REMOVING! any commits you may have at the submodule and that were not pushed to a remote.
+The `--clean` flag will assure that the official version for each submodule will be downloaded. If you added changes to any submodule be aware that calling again to `python3 pull-submodules.py --clean` will bring the state of submodules to the official ones at the main repository. REMOVING! any commits you may have at the submodule and that were not pushed to a remote.
 
 ### Pulling only libraries
 
@@ -69,7 +73,7 @@ If you have access to private repositories, related to projects or experiments i
 python3 pull-submodules.py --lfna (or --sjtu)
 ```
 
-### Pulling the latest state of each submodule (non-official)
+### Pulling the latest state of each submodule (recommended but non-official)
 
 On top of that, you might get the latest state (master branch) of each submodule by adding the `--latest` option. But before that you need to change to the master branch
 
