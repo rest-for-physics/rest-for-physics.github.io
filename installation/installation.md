@@ -98,17 +98,17 @@ Once the REST installation succeeds we may load the REST libraries by invoking t
 source /path/to/installation/thisREST.sh
 ```
 
-If the welcome message was not disable using the corresponding cmake option, you should see the following output on screen
+If the welcome message was not disabled using the corresponding cmake option, you should now see the following output on screen
 
 ```
   *****************************************************************************
   W E L C O M E   to  R E S T  
   
   Commit  : 5ca24fea (2022-11-28 14:00:19 +0100)  
-  Branch/Version : jgalan_applyCut_always/v2.3.13  
+  Branch/Version : master/v2.3.13  
   Compilation date : 2022-11-29 15:30  
   Official release : No 
-  Clean state : No 
+  Clean state : Yes 
 ```
 
 This output can be generated again using `rest-config --welcome`.
