@@ -6,6 +6,8 @@ has_children: true
 permalink: /installation
 ---
 
+1. TOC
+{:toc}
 
 The instructions in this section will get you a copy of the project up and running on your local machine in your home directory.
 
@@ -130,7 +132,3 @@ The script `thisREST.sh` will load into your system **ROOT**, **Geant4**, **Garf
 
 {: .hint }
 If you are working in a system with an official pre-installed release of REST, the most convenient during the compilation of your own REST build is that, before running cmake, you load the `thisREST.sh` from the latest official release, so that you load in your environment the required **Geant4**, **ROOT** and **Garfield** installations that are known to work properly.
-
-
-1. TOC
-{:toc}
