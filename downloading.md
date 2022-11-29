@@ -40,7 +40,7 @@ In order to get the full REST-for-Physics functionality, it will be necessary to
 {: .hint }
 Execute `python3 pull-submodules.py` without any arguments to discover all the options available.
 
-#### Downloading official submodules (linked to a particular release)
+### Downloading official submodules (linked to a particular release)
 
 In order to download the state of the submodule as it was at a particular release or framework commit, we may use the `--clean` argument option.
 
@@ -58,7 +58,7 @@ git log
 {: .warning }
 If you added changes to any submodule be aware that calling again to `python3 pull-submodules.py --clean` will bring the state of submodules to the official ones at the main repository. REMOVING! any commits you may have at the submodule and that were not pushed to a remote.
 
-#### Pulling only libraries
+### Pulling only libraries
 
 If you wish to download only libraries it is possible to do:
 
@@ -66,7 +66,7 @@ If you wish to download only libraries it is possible to do:
 python3 pull-submodules.py --onlylibs
 ```
 
-#### Pulling private project submodules (optional)
+### Pulling private project submodules (optional)
 
 If you have access to private repositories, related to projects or experiments inside the REST community you may pull those executing an additional command.
 
@@ -74,7 +74,7 @@ If you have access to private repositories, related to projects or experiments i
 python3 pull-submodules.py --lfna (or --sjtu)
 ```
 
-#### Pulling the latest state of each submodule (recommended but non-official)
+### Pulling the latest state of each submodule (recommended but non-official)
 
 On top of that, you might get the latest state (master branch) of each submodule by adding the `--latest` option. But before is recommended to change to the master branch at the main framework repository.
 
@@ -91,7 +91,7 @@ git checkout master
 git pull
 ```
 
-#### Pulling a development branch (contributing to PRs)
+### Pulling a development branch (contributing to PRs)
 
 The development of new features, bug corrections, documentation or any other additions to the code occurs in the form of pull-requests, or PR, at the GitHub repositories. PRs are associated to `git branches` that inherit from the master branch and where the development occurs without affecting other users. A PR is a participative and active development thread where developers may comment on the code, contribute, review and approuve the changes that will end up finally at the main repository branch, or master branch.
 
@@ -116,7 +116,7 @@ cd rest-framework/scripts
 Executing that script will automatically pull the `minor_fix` branch at each repository submodule linked to the main framework repository. If the branch does not exist at the submodule, it will simply skip it and retrieve the master branch. We may know contribute to the PR by adding commits, and pushing using `git push` to the remote branch.
 
 
-#### Excluding submodules (advanced)
+### Excluding submodules (advanced)
 
 It is also possible to exclude submodules from being pulled by using the `--exclude:` directive and comma separated submodule names.
 
@@ -124,7 +124,7 @@ It is also possible to exclude submodules from being pulled by using the `--excl
 python3 pull-submodules.py --exclude:axionlib,geant4lib,restG4
 ```
 
-#### Recovering a clean state of rest-framework and submodules (trick)
+### Recovering a clean state of rest-framework and submodules (trick)
 
 If you have added modifications to the rest-framework code and/or submodules. It is possible to fully clean your repository to be an identical copy to the one found at the remote repository.
 
