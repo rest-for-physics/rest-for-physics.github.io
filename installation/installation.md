@@ -56,6 +56,9 @@ cmake .. -DCMAKE_INSTALL_PREFIX=../install/master/
 make -j4 install
 ```
 
+{: .note }
+Note that once we have passed an option by argument to `cmake`, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path in any future calls, `cmake` will just remember the last choice as soon as the `build` directory is not erased. Sometimes, when running into problems with the `cmake` configuration it is an option to completely remove the `build` directory to avoid problems with non-appropriate cached variables.
+
 After all the compilation and installation process ends, you will end up with an installed REST version at `~/rest-framework/install/master/`.
 
 Execute the following command to configure your `.bashrc` to load REST in your system environment each time you open a new shell terminal.
@@ -87,8 +90,49 @@ cmake .. -DREST_ALL_LIBS=ON
 make -j4 install
 ```
 
-{: .important }
-Notice that once we pass an option to cmake, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path we provided the first time, and any future calls to `cmake` will assume `detector` and `raw` libraries are enabled.
+### Loading and testing the installation
+
+Once the REST installation succeeds we may load the REST libraries by invoking the `thisREST.sh` bash shell script.
+
+```
+source /path/to/installation/thisREST.sh
+```
+
+If the welcome message was not disable using the corresponding cmake option, you should see the following output on screen
+
+```
+  *****************************************************************************
+  W E L C O M E   to  R E S T  
+  
+  Commit  : 5ca24fea (2022-11-28 14:00:19 +0100)  
+  Branch/Version : jgalan_applyCut_always/v2.3.13  
+  Compilation date : 2022-11-29 15:30  
+  Official release : No 
+  Clean state : No 
+```
+
+This output can be generated again using `rest-config --welcome`.
+
+{: .note }
+The `rest-config` command will provide information on the specific installation options of your REST installation.
+
+Now you may start `restRoot` to check that libraries are properly loading inside a ROOT interface.
+
+```
+
+~$ restRoot
+= Loading libraries ...
+ - /home/jgalan/rest-framework/install/lib/libRestFramework.so
+ - /home/jgalan/rest-framework/install/lib/libRestAxion.so
+ 
+root [0] 
+```
+
+{: .important}
+The script `thisREST.sh` will load into your system **ROOT**, **Geant4**, **Garfield** and any other optional libraries required during the compilation. It is **important** to understand that this script loads exactly the same version of the ROOT libraries used for compilation, and that a REST compilation will only work properly when loading exactly the same version of ROOT used to compile REST.
+
+{: .hint }
+If you are working in a system with an official pre-installed release of REST, the most convenient during the compilation of your own REST build is that, before running cmake, you load the `thisREST.sh` from the latest official release, so that you load in your environment the required Geant4, ROOT and Garfield installations that are known to work properly.
 
 
 1. TOC
