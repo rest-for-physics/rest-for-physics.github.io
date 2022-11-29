@@ -55,7 +55,7 @@ make -j4 install
 ```
 
 {: .note }
-Note that once we have passed an option by argument to `cmake`, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path in any future calls, `cmake` will just remember the last choice as soon as the `build` directory is not erased. Sometimes, when running into problems with the `cmake` configuration it is an option to completely remove the `build` directory to avoid problems with non-appropriate cached variables.
+Note that once we have passed an option by argument to **cmake**, that option will be cached inside the cmake system. I.e. we do not need to provide the installation path in any future calls, **cmake** will just remember the last choice as soon as the **build** directory is not erased. Sometimes, when running into problems with the **cmake** configuration it is an option to completely remove the **build** directory to avoid problems with non-appropriate cached variables.
 
 After all the compilation and installation process ends, you will end up with an installed REST version at `~/rest-framework/install/master/`.
 
