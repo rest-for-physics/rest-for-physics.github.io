@@ -12,11 +12,14 @@ nav_order: 10
 
 ---
 
-![REST logo](assets/images/RESTlogoFull.png)
 
 
 **These pages are under continuous construction. Some sections need to be documented yet. If you are willing to see any of the sections in these pages to be completed or updated, please, do not hesitate to [create an issue at this documentation repository](https://github.com/rest-for-physics/rest-for-physics.github.io/issues) asking for missing docs. Thanks!**
 
+<p align="center">
+<img src="https://github.com/rest-for-physics/rest-for-physics.github.io/blob/development/assets/images/RESTlogoFull.png" width="350">
+  </p>
+  
 The REST (Rare Event Searches Toolkit) Framework is mainly written in C++ and it is fully integrated with [ROOT](https://root.cern.ch) I/O interface.
 REST was born as a collaborative software effort to provide common tools for acquisition, simulation, and data analysis of gaseous Time Projection Chambers (TPCs).
 The REST Framework provides 3 interfaces that prototype the use of **event types**, **metadata** and **event processes** through `TRestEvent`, `TRestMetadata` and `TRestEventProcess` abstract class definitions.
