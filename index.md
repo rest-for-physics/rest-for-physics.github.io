@@ -18,7 +18,7 @@ nav_order: 10
 
 <p align="center">
 <img src="assets/images/RESTlogoFull.png" width="350">
-  </p>
+</p>
   
 The REST (Rare Event Searches Toolkit) Framework is mainly written in C++ and it is fully integrated with [ROOT](https://root.cern.ch) I/O interface.
 REST was born as a collaborative software effort to provide common tools for acquisition, simulation, and data analysis of gaseous Time Projection Chambers (TPCs).
@@ -43,5 +43,11 @@ This project is licensed under the GNU License - see the [LICENSE](assets/LICENC
 
 We acknowledge support from the the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme, grant agreement ERC-2017-AdG788781 (IAXO+), and from the Spanish Agencia Estatal de Investigacion under grant FPA2016-76978-C3-1-P
 
+<p align="center">
+<img src="assets/images/ResearchLogos.png" width="700">
+</p>
+
 ![Insitution logos](assets/images/institution_logos.png)
+
+
 
