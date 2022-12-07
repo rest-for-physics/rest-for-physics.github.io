@@ -131,4 +131,16 @@ root [0]
 The script `thisREST.sh` will load into your system **ROOT**, **Geant4**, **Garfield** and any other optional libraries required during the compilation. It is **important** to understand that this script loads exactly the same version of the ROOT libraries used for compilation, and that a REST compilation will only work properly when loading exactly the same version of ROOT used to compile REST.
 
 {: .hint }
-If you are working in a system with an official pre-installed release of REST, the most convenient during the compilation of your own REST build is that, before running cmake, you load the `thisREST.sh` from the latest official release, so that you load in your environment the required **Geant4**, **ROOT** and **Garfield** installations that are known to work properly.
+> If you are working in a system with an official pre-installed release of REST, the most convenient during the compilation of your own REST build is that, before running cmake, you load the `thisREST.sh` from the latest official release, so that you load in your environment the required **Geant4**, **ROOT** and **Garfield** installations that are known to work properly.
+> 
+> The following recipe might help to start a compilation from scratch:
+> ```
+> rm -rf rest-framework
+> git clone git@github.com:rest-for-physics/framework.git rest-framework
+> cd rest-framework
+> python3 pull-submodules.py --latest
+> mkdir build
+> source /programas/rest/latest/thisREST.sh
+> cmake -DCMAKE_INSTALL_PREFIX=../install -DREST_ALL_LIBS=ON ..
+> make -j install
+> ```
