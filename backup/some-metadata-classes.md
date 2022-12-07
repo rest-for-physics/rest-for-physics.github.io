@@ -346,7 +346,7 @@ In a ROOT session we can call the method TRestDetectorReadoutPlane::GetReadoutHi
 
 [0] `TFile *f = new TFile( "readouts.root" );`
 
-[1] `TRestDetectorReadout *r = f->Get("pixelReadout");`
+[1] `TRestDetectorReadout *r = (TRestDetectorReadout*)f->Get("pixelReadout");`
 
 [2] `r->GetReadoutPlane(0)->GetReadoutHistogram()->Draw();`
 

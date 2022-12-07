@@ -8,10 +8,19 @@ nav_order: 10
 [Forum](http://rest-forum.unizar.es){: .btn .btn-green .fs-4 .mb-4 .mb-md-0 }
 [API documentation](https://sultan.unizar.es/rest){: .btn .btn-purple .fs-4 .mb-4 .mb-md-0 }
 [Zenodo](https://doi.org/10.5281/zenodo.4922415){: .btn .btn-blue .fs-4 .mb-4 .mb-md-0 }
+[Publication](https://doi.org/10.1016/j.cpc.2021.108281){: .btn .btn-green .fs-4 .mb-4 .mb-md-0 }
 
 ---
 
-The REST (Rare Event Searches with TPCs) Framework is mainly written in C++ and it is fully integrated with [ROOT](https://root.cern.ch) I/O interface.
+
+
+**These pages are under continuous construction. Some sections need to be documented yet. If you are willing to see any of the sections in these pages to be completed or updated, please, do not hesitate to [create an issue at this documentation repository](https://github.com/rest-for-physics/rest-for-physics.github.io/issues) asking for missing docs. Thanks!**
+
+<p align="center">
+<img src="assets/images/RESTlogoFull.png" width="350">
+</p>
+  
+The REST (Rare Event Searches Toolkit) Framework is mainly written in C++ and it is fully integrated with [ROOT](https://root.cern.ch) I/O interface.
 REST was born as a collaborative software effort to provide common tools for acquisition, simulation, and data analysis of gaseous Time Projection Chambers (TPCs).
 The REST Framework provides 3 interfaces that prototype the use of **event types**, **metadata** and **event processes** through `TRestEvent`, `TRestMetadata` and `TRestEventProcess` abstract class definitions.
 Any REST library will implement **specific objects** that inherit from those 3 basic interfaces. 
@@ -34,6 +43,11 @@ This project is licensed under the GNU License - see the [LICENSE](assets/LICENC
 
 We acknowledge support from the the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme, grant agreement ERC-2017-AdG788781 (IAXO+), and from the Spanish Agencia Estatal de Investigacion under grant FPA2016-76978-C3-1-P
 
+<p align="center">
+<img src="assets/images/ResearchLogos.png" width="600">
+</p>
+
 ![Insitution logos](assets/images/institution_logos.png)
+
 
 

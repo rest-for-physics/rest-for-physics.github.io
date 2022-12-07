@@ -23,3 +23,22 @@ gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into t
 
 ga_tracking: G-N6WX17N2RD
 ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true by default)
+
+callouts:
+  hint:
+    title: Hint
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+    
+   

@@ -5,14 +5,11 @@ nav_order: 30
 has_children: true
 permalink: /getting-started
 ---
-# REST basics
+# Getting started
 {: .no_toc }
 
 ## Table of contents
 {: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ---
 
