@@ -19,20 +19,15 @@ nav_order: 20
 
 ### Required python headers
 
-When we write our python script we need to import the ROOT libraries, and any REST library we used to generate or process our files. Some examples of REST available libraries are: `libRestRaw.so`, `libRestDetector.so`, `libRestGeant4`, `libRestTrack`, and/or `libRestAxion`. On top of that we need always to include the main or core library, `libRestFramework.so` that loads the common REST classes.
+When we write our python script we need to import the ROOT libraries, and any REST library we used to generate or process our files. This is done automatically by the `import REST` command inside python.
 
-The following header should be always included in your script adding a line for each library you will need.
+In order to use REST libraries in python it is enough to import both ROOT and REST libraries using the `import` python command:
 
 ```python
 #!/usr/bin/python3
 
 import ROOT
-
-# We load the REST libraries
-ROOT.gSystem.Load("libRestFramework.so")
-
-# We are reading simulation data we will need at least the Geant4 library
-ROOT.gSystem.Load("libRestGeant4.so")
+import REST
 ```
 
 ### Opening a ROOT file generated with REST
