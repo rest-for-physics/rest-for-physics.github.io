@@ -19,9 +19,10 @@ Here you will find a quick recipe for a minimal REST build in MacOs.
 
 5. Clone REST repository using the command: `git clone https://github.com/rest-for-physics/framework rest-framework`. For additional details, downloading a particular release, or pulling REST-for-Physics libraries and packages, check the [download documentation page](https://rest-for-physics.github.io/downloading.html).
 
-6. Install ROOT via any of these options:
-    - Execute the command "brew install root"
-    - Go inside the rest-framework installation scripts directory: `cd rest-framework/scripts/installation/` and execute `./installROOT.sh`. Then, you need to source the compiled ROOT: `source $HOME/apps/root-6.24.02/install/bin/thisroot.sh`.
+6. Install ROOT executing `brew install root`.
+
+{: .note } 
+> Alternativelly. Go inside the rest-framework installation scripts directory: `cd rest-framework/scripts/installation/` and execute `./installROOT.sh`. Then, you will need to source the compiled ROOT: `source $HOME/apps/root-6.24.02/install/bin/thisroot.sh`.
 
 7. Now go to the rest-framework directory executing `cd rest-framework`, create a directory `mkdir build` and execute: `cmake -DCMAKE_INSTALL_PREFIX=../install ..`
 
