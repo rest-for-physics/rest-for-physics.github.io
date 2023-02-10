@@ -5,9 +5,11 @@ parent: REST Advanced
 nav_order: 10
 ---
 
-REST-for-Physics has many contributors so a few steps are necessary in order to maintain a good code quality and style. For a complete guide please have a look at our main framework [Contributing guide](https://github.com/rest-for-physics/framework/blob/master/CONTRIBUTING.md).
+REST-for-Physics has many contributors so a few steps are necessary in order to maintain a good code quality and style. 
 
 In the following we will introduce crucial aspects you should consider before pushing to the repository.
+
+For a complete guide please have a look at our main framework [Contributing guide](https://github.com/rest-for-physics/framework/blob/master/CONTRIBUTING.md).
 
 ### Installing pre-commit hooks
 
