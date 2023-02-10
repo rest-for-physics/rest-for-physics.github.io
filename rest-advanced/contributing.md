@@ -5,18 +5,11 @@ parent: REST Advanced
 nav_order: 10
 ---
 
-## Adding a new class
-{: .no_toc }
+REST-for-Physics has many contributors so a few steps are necessary in order to maintain a good code quality and style. For a complete guide please have a look at our main framework [Contributing guide](https://github.com/rest-for-physics/framework/blob/master/CONTRIBUTING.md).
 
-### Table of contents
-{: .no_toc .text-delta }
+In the following we will introduce crucial aspects you should consider before pushing to the repository.
 
-1. TOC
-{:toc}
-
----
-
-REST-for-Physics has many contributors so a few steps are necessary in order to maintain a good code quality and style.
+### Installing pre-commit hooks
 
 The [pre-commit tool](https://pre-commit.com/) is used to check the code style and to automatically fix some of the issues.
 
