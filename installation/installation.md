@@ -133,6 +133,9 @@ The script `thisREST.sh` will load into your system **ROOT**, **Geant4**, **Garf
 {: .hint }
 > If you are working in a system with an official pre-installed release of REST, the most convenient during the compilation of your own REST build is that, before running cmake, you load the `thisREST.sh` from the latest official release, so that you load in your environment the required **Geant4**, **ROOT** and **Garfield** installations that are known to work properly.
 > 
+> source /programas/rest/latest/thisREST.sh
+
+{: .hint }
 > The following recipe might help to start a compilation from scratch:
 > ```
 > rm -rf rest-framework
@@ -140,7 +143,7 @@ The script `thisREST.sh` will load into your system **ROOT**, **Geant4**, **Garf
 > cd rest-framework
 > python3 pull-submodules.py --latest
 > mkdir build
-> source /programas/rest/latest/thisREST.sh
+> cd build
 > cmake -DCMAKE_INSTALL_PREFIX=../install -DREST_ALL_LIBS=ON ..
 > make -j install
 > ```
