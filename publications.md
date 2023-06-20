@@ -14,5 +14,6 @@ nav_order: 90
 
 # Presentations
 
+*An overview of REST-for-Physics software project status*, [Javier Galan, 2023-June, RD51 Collaboration meeting](https://indico.cern.ch/event/1273825/contributions/5437231/attachments/2669154/4626305/An%20overview%20on%20REST-for-Physics%20software%20project%20status.pdf)
 - *REST-for-Physics*, [Luis Obis, 2022-May, ROOT Users Workshop, FermiLab](https://indico.fnal.gov/event/23628/contributions/240755/).
 - *REST v2.0 : A data analysis and simulation framework for micro-patterned readout detectors.*, [Javier Galan, 2016-Dec, 8th Symposium on Large TPCs for low-energy rare event detection, Paris](https://indi.to/3hzcz).
