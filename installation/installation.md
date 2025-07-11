@@ -16,7 +16,7 @@ The instructions in this section will get you a copy of the project up and runni
 
 ### Prerequisites for building REST
 
-The only mandatory prerequisite of REST is ROOT6. Details on the installation of ROOT will be found at the [ROOT's official site](https://root.cern.ch). 
+The only mandatory prerequisite of REST is ROOT6. Details on the installation of ROOT will be found at [ROOT's official site](https://root.cern.ch). 
 One may directly find binary distributions on its [download page](https://root.cern.ch/downloading-root), although **the best choice is to compile ROOT6 from source**. If ROOT6 compiles without problems, REST-for-Physics will usually compile without major issues.
 
 We provide a script `installROOT.sh` inside the directory `scripts/installation/` to automatize the process of downloading, compiling and installing a predefined version of ROOT in your local system. If your system comes installed with all the [ROOT prerequisites](https://root.cern/install/dependencies/) the installation using this script should be smooth. Problems during the ROOT compilation are usually solved by indicating the appropriate paths for python, or using the appropriate compilation flags. It is recommended to have a look to the `installROOT.sh` script to identify the REST community recommended ROOT version, and the compilation flags that we tipically use.
