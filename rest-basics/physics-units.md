@@ -5,7 +5,7 @@ parent: REST Basics
 nav_order: 30
 ---
 
-## Data format
+## Units
 {: .no_toc }
 
 ### Table of contents
