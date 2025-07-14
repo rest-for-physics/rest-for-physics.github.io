@@ -5,7 +5,7 @@ nav_order: 55
 has_children: true
 permalink: /data-analysis
 ---
-# Data processing
+# Data Analysis
 {: .no_toc }
 
 ## Table of contents
