@@ -13,11 +13,11 @@ permalink: /getting-started
 
 ---
 
-In this section you will find tips for accessing REST files with python, C-macros, and restRoot.
-Additionally, quick examples for filtering, drawing, browsing and viewing events are provided. 
+In this section, you will find tips for **accessing REST files** with python, C-macros, and restRoot.
+Additionally, quick examples for **filtering, drawing, browsing and viewing events** are provided. 
 
 
 
 
 
-For getting started in python, you can find tutorials [here.]{https://www.w3schools.com/python/default.asp} 
+For getting started in python, you can find tutorials [here](https://www.w3schools.com/python/default.asp).
