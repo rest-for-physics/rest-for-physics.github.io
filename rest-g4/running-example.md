@@ -119,10 +119,10 @@ As we have included a file with material definitions, just need to referenciate 
 ```
 </gdml>
 ```
-**Activity 1:** Identify in the material repository (https://rest-for-physics.github.io/materials/rest.xml) the materials appearing in the GDML file. 
+**Activity 1:** Identify in the [material repository](https://rest-for-physics.github.io/materials/rest.xml) the materials appearing in the GDML file. 
 **Activity 2:** Create your own **box.gdml** file including all the sections and visualize the geometry using the REST macro  ```REST_Geant4_ViewGeometry("box.gdml")``` after launching a restRoot session `restRoot -m 1`. 
 
-**NOTE:** The argument `-m 1` is equivalent to use the command`restRootMacros` and it will load in your ROOT interactive shell environment the REST macros installed in the installation directory.
+**NOTE:** The argument `-m 1` is equivalent to use the command `restRootMacros` and it will load in your ROOT interactive shell environment the REST macros installed in the installation directory.
 
 ### Exercise 2. Create a simple *RML* file to launch simulations
 
