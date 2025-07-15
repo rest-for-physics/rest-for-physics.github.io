@@ -17,6 +17,10 @@ permalink: /rest-g4
 ---
 In this section, you will find advice for getting started with restG4, including how to run and access output files from simulations. Examples included in the base [restG4 repository](https://github.com/rest-for-physics/restG4/tree/master/examples) are also illustrated. 
 
+The `restG4` package provides an executable named restG4 which refers to both REST and geant4 library. To install it, 
+we must have Geant4 and REST mainbody installed. Then use commands `cmake` and `make`, as
+instructed in section 2. restG4 is a single-executable program. By default it is installed in REST 
+bin directory (${REST_PATH}/bin/). We can directly type `restG4` to start it.
 
 ### Getting started with the restG4 package
 
@@ -118,7 +122,7 @@ the `multithreading` label.
 
 We encourage our users to use the multithreading feature especially when performing exploratory simulations.
 
-## Producing, visualizing and printing Geant4 REST generated data using the examples
+### Producing, visualizing and printing Geant4 REST generated data using the examples
 
 Inside the file `REST_PATH/config/template/restG4.rml`, you will find three different examples that will allow you to generate and store event data. The file `restG4.rml` contains a unique TRestRun and TRestPhysicsLists sections, common to each simulation case, and different TRestGeant4Metadata sections each of them definning different simulation conditions. All these examples use the basic geometry described previously.
 
