@@ -80,7 +80,7 @@ As we have included a file with material definitions, just need to referenciate 
 *Structure*
 ```
 <structure>
-    <!-- {{{ Volumes definition (material and solid assignment) -->
+    <!-- Volumes definition (material and solid assignment) -->
     <volume name="gasVolume">
         <materialref ref="PureArgon"/>
         <solidref ref="gasSolid"/>
@@ -91,7 +91,7 @@ As we have included a file with material definitions, just need to referenciate 
         <solidref ref="vesselSolid"/>
     </volume>
 
-    <!-- {{{ Physical volume definition (volume and position assignment) -->
+    <!-- Physical volume definition (volume and position assignment) -->
      <volume name="World">
         <materialref ref="G4_AIR"/>
         <solidref ref="WorldSolid"/>
