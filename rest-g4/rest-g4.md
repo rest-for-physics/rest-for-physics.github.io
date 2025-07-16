@@ -18,8 +18,7 @@ permalink: /rest-g4
 In this section, you will find advice for getting started with restG4, including how to run and access output files from simulations. Examples included in the base [restG4 repository](https://github.com/rest-for-physics/restG4/tree/master/examples) are also illustrated. 
 
 The `restG4` package provides an executable named restG4 which refers to both REST and geant4 library. To install it, 
-we must have Geant4 and REST mainbody installed. Then use commands `cmake` and `make`, as
-instructed in section 2. restG4 is a single-executable program. By default it is installed in REST 
+we must have Geant4 and REST mainbody installed. Then use commands `cmake` and `make`. restG4 is a single-executable program. By default it is installed in REST 
 bin directory (${REST_PATH}/bin/). We can directly type `restG4` to start it.
 
 ### Getting started with the restG4 package
