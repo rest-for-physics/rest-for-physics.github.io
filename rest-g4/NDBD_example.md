@@ -29,7 +29,11 @@ Once successfully run (this may take a few mintues), the output `root` file will
 
 ### Visualizing the Geometry
 
-The geometry can be accessed by entering `restRoot -m 1 output_file.root` to open a root session. Then, using `REST_Geant4_ViewEvent("fileName.root")` allows for the visualization of the geometry and particle tracks.
+The geometry can be accessed by entering:
+```
+restRoot -m 1 output_file.root
+```
+to open a root session. Then, using `REST_Geant4_ViewEvent("fileName.root")` allows for the visualization of the geometry and particle tracks.
 
 
 ### Accessing the Output
