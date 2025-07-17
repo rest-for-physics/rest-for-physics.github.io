@@ -123,28 +123,34 @@ We encourage our users to use the multithreading feature especially when perform
 
 ### Producing, visualizing and printing Geant4 REST generated data using the examples
 
-Inside the file `REST_PATH/config/template/restG4.rml`, you will find three different examples that will allow you to generate and store event data. The file `restG4.rml` contains a unique TRestRun and TRestPhysicsLists sections, common to each simulation case, and different TRestGeant4Metadata sections each of them definning different simulation conditions. All these examples use the basic geometry described previously.
+Inside the [`restG4`](https://github.com/rest-for-physics/restG4/tree/master/examples) directory, you will find fourteen different examples that will allow you to generate and store event data. The file `.rml` contains a unique TRestRun and TRestPhysicsLists sections, common to each simulation case, and different `TRestGeant4Metadata` sections each of them definning different simulation conditions. 
 
 The following list describes briefly the examples available,
 
-1. **NLDBD**: It produces neutrinoless double beta decay mode of 136Xe isotope. The events are launched using a volume generator in the gas.
-2. **MuonShower**: It produces a cosmic muon shower using the measured energy and angular spectrum of muons on earth. The muons are randomly generated from a virtual wall placed on top of the detector.
-3. **Cd109**: It simulates the radiactive decay of Cadmium 109 isotope at a fixed position inside the detector. Low energy gammas from the de-excitation of the daugther isotope interact inside the detector.
+1. **NLDBD**: It produces neutrinoless double beta decay mode of 136Xe isotope. The events are launched using a volume generator in the gas. 
+2. TREXDM 
+3. Fluorescence 
+4. MuonScan 
+5. PandaXIII 
+6. IonRecoils 
+7. FullChainDecay 
+8. Alphas 
+9. Pb210_Shield 
+10. Geometries 
+11. Xrays 
+12. Generators 
+13. IAXO 
+14. DetectorResponse 
 
-These working examples can be launched with *restG4* command. In these examples, the number of primaries to generate is only 100, but you can modify it to make a longer simulation by definning the environment variable *NEVENTS*. We must also assure that the *REST_DATAPATH* variable is defined and points to an existing directory with write access.
-
-The restG4 command receives up to two arguments,
-
-1. the RML file containning the TRestGeant4Metadata, TRestRun and TRestPhysicsLists sections,
-2. and the name of the TRestGeant4Metadata section to be used.
+<!--- These working examples can be launched with *restG4* command. In these examples, the number of primaries to generate is only 100, but you can modify it to make a longer simulation by definning the environment variable *NEVENTS*. We must also assure that the *REST_DATAPATH* variable is defined and points to an existing directory with write access. --->
 
 The execution of *restG4* follows this scheme,
 
 ```
-restG4 cfgFile.rml sectionName
+restG4 example_file.rml 
 ```
 
-being the first argument, `cfgFile.rml` mandatory, and the second argument, `sectionName`, optional. If the name of the section is omitted when launching *restG4*, the first TRestGeant4Metadata section found inside `cfgFile.rml` will be considered.
+as follows from the *Basic Usage* section above.
 
 
 ### Ending the simulation early
