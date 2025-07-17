@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Running an example
+title: Tutorial
 parent: The restG4 package
 nav_order: 20
 ---
 
-## Running an example with restG4
+## Tutorial for restG4
 {: .no_toc }
 
 ## Table of contents
