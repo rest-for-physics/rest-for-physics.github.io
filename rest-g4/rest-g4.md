@@ -38,6 +38,8 @@ Typing `restG4 -h` will show all available options.
 `restG4 simulation.rml` will launch a simulation using `simulation.rml` as the configuration file. The output file will
 be saved to the specified path in the configuration.
 
+Once a root file has been created, open a root session `restRoot -m 1` and use the macro `REST_Geant4_ViewEvent("fileName.root")` to visualise the geometry and the particle tracks; use the new `TBrowser` to explore the `Tree` inside the file.
+
 ### Overriding values from the RML
 
 The CLI interface allows to set a few different parameters without having to modify the RML.
