@@ -5,7 +5,7 @@ parent: Getting started
 nav_order: 40
 ---
 
-## Browsing and viewing events
+# Browsing and Viewing Events
 {: .no_toc }
 
 ### Table of contents
@@ -16,35 +16,142 @@ nav_order: 40
 
 ---
 
-Events in REST data files are managed by [`TRestRun`](https://sultan.unizar.es/rest/classTRestRun.html), whose graphical interface, in turn, is shown by
-by [`TRestBrowser`](https://sultan.unizar.es/rest/classTRestBrowser.html). This class shows a `TBrowser` window during initialization. In the window there is a canvas showing the current event, and a control panel to switch between events. 
+REST files can be inspected interactively with
+[`TRestBrowser`](https://rest-for-physics.github.io/framework/classTRestBrowser.html).
+The browser opens a graphical window with an event display and controls for
+moving through the entries stored in a REST file.
 
-In `restRoot` prompt, by using [`TRestBrowser`](https://sultan.unizar.es/rest/classTRestBrowser.html), one can easily get accsess to the file's events, and don't need to manually instantiate a [`TRestEvent`](https://sultan.unizar.es/rest/classTRestEvent.html) object and set the tree's branch address. Just type:  
+For quick one-event drawing examples, see [Drawing event data](drawing-events.html).
+This page focuses on the interactive browser.
 
+## Starting the Browser
+
+From a shell, use:
+
+```bash
+restViewEvents myFile.root
 ```
-restRoot abc.root
-TRestBrowser a
-TRestxxxEvent*eve=(TRestxxxEvent*)a.GetInputEvent()
+
+The same browser can be started from a `restRoot` session:
+
+```cpp
+REST_ViewEvents("myFile.root");
 ```
 
-and will be free to operate this event.
+Both commands use the REST macro `REST_ViewEvents.C`, which creates a
+`TRestBrowser` and opens the file.
 
-By default [`TRestBrowser`](https://sultan.unizar.es/rest/classTRestBrowser.html) extracts the last event in file, and draws it in the canvas by using the viewer class `TRestGenericEventViewer`. This viewer just calls the default method `TRestEvent::Draw()`. Other viewers
-like [`TRestDetectorHitsEventViewer`](https://sultan.unizar.es/rest/classTRestDetectorHitsEventViewer.html) or [`TRestGeant4EventViewer`](https://sultan.unizar.es/rest/classTRestGeant4EventViewer.html) are also available. Some pre-defined bash alias and ROOT 
-scripts can be used to draw these events in differently. In bash, we can directly start a event viewer 
-window with commands: `restViewEvents abc.root`, `restManager ViewHitsEvents hits.root`. In restRoot 
-prompt, we can call the function: `REST_ViewEvents("abc.root")` to start the event viewer.
+If the command-line executable is not available in your installation, open the
+file with `restRoot` and call the macro from there:
 
-Here for example, we use the generated file in [example](process-a-raw-data-file), and call the command 
-`restViewEvents abc.root`. The last event is [`TRestRawSignalEvent`](https://sultan.unizar.es/rest/classTRestRawSignalEvent.html) type in this file, and a TRestBrowser window will show up drawing the waveforms. In the command line it will print observable values.
+```bash
+restRoot myFile.root
+```
 
-![alt](../assets/images/restViewEvents.png)
+```cpp
+REST_ViewEvents("myFile.root");
+```
 
-In the [`TRestBrowser`](https://sultan.unizar.es/rest/classTRestBrowser.html) window, on the right side there is a combined plot of the event, which contains 
-several individual signal waveforms. In the left side we have a control panel. The arrow buttoms and the 
-text box in upper area helps to switch next/previous/specific event. The browser also supports plot 
-options. If we click on the lower buttoms, for [`TRestRawSignalEvent`](https://sultan.unizar.es/rest/classTRestRawSignalEvent.html) it will plot next/previous/specific signals inside the current event.
+## Browser Layout
 
-Some viewer processes are also available in REST. The user can have a view of the events during 
-the process. All the viewer processes are single thread only, and TRestProcessRunner will automatically
-roll back to single thread mode with a viewer process in process chain. 
+The browser shows the current event on the right and the navigation controls on
+the left.
+
+![REST event viewer](../assets/images/restViewEvents.png)
+
+The screenshot above shows a
+[`TRestTrackEvent`](https://rest-for-physics.github.io/framework/classTRestTrackEvent.html).
+The same browser can display other event types when they are available in the
+file.
+
+The left panel contains:
+
+- **Entry**: load an event by entry number in the tree.
+- **Event ID** and **Sub ID**: load an event by REST event identifier.
+- **Event Type**: select one of the event representations available in the file.
+- **Plot Options**: pass drawing options to the event viewer.
+- **Previous/next controls**: move through events or plot options.
+
+The event display uses the event class drawing implementation, usually
+`DrawEvent()`. For example, a `TRestRawSignalEvent` is drawn as waveforms, a
+`TRestDetectorSignalEvent` as detector-channel signals, and a `TRestTrackEvent`
+as track projections.
+
+## Selecting Event Types
+
+Some REST files store more than one event representation. For example, a file
+may contain raw signals, detector signals, detector hits, and tracks produced by
+the same processing chain.
+
+Use the **Event Type** selector to choose which representation to inspect. This
+is useful when checking how one event changes through the processing chain:
+
+```text
+TRestRawSignalEvent
+  -> TRestDetectorSignalEvent
+  -> TRestDetectorHitsEvent
+  -> TRestTrackEvent
+```
+
+If you already know which event type you want to view, it can also be passed to
+the macro:
+
+```cpp
+REST_ViewEvents("myFile.root", "TRestDetectorSignalEvent");
+```
+
+For detector signal events, there is a convenience wrapper:
+
+```cpp
+REST_ViewSignalEvent("myFile.root");
+```
+
+## Plot Options
+
+The **Plot Options** box forwards text options to the event drawing method.
+Available options depend on the event class.
+
+For example, raw signal events support options such as:
+
+```text
+ids[800,900]:printIDs
+```
+
+or:
+
+```text
+signalRangeID[800,900]:onlyGoodSignals[3.5,1.5,7]:baseLineRange[20,150]
+```
+
+These are interpreted by
+[`TRestRawSignalEvent::DrawEvent`](https://rest-for-physics.github.io/framework/classTRestRawSignalEvent.html).
+Other event classes have their own drawing behavior and may accept different
+options.
+
+## Terminal Output
+
+When the browser loads an event, REST also prints information in the terminal.
+This usually includes the event ID, timestamp, event content summary, and the
+analysis observables stored for that entry.
+
+This terminal output is useful because it connects the visual event display with
+the observables in the analysis tree. For example, while the browser shows a
+track event, the terminal can show the corresponding track, hit, signal, and
+rate observables for the same entry.
+
+## Viewer Processes
+
+REST also provides viewer processes that can be inserted in a processing chain
+to display events while the chain is running. These are useful for debugging a
+configuration or checking intermediate event representations.
+
+Viewer processes require a graphical session and normally force the processing
+chain to run in single-thread mode.
+
+Examples include:
+
+- `TRestDetectorSignalViewerProcess`
+- `TRestTrackViewerProcess`
+
+Use these when the goal is to inspect events during processing. Use
+`TRestBrowser` when the goal is to inspect events already stored in a REST file.
