@@ -15,7 +15,7 @@ In this section, you will find tips for
 - [Quick REST file inspection](https://rest-for-physics.github.io/getting-started/quick-access)
   - [Using python](https://rest-for-physics.github.io/getting-started/quick-data-inspection-pyROOT.html)
   - [Using C-macros](https://rest-for-physics.github.io/getting-started/quick-data-inspection-Cmacro.html)
-  - [Using restRoot](https://rest-for-physics.github.io/getting-started/quick-data-inspection-restRoot.html) To be written
+  - [Using restRoot](https://rest-for-physics.github.io/getting-started/quick-data-inspection-restRoot.html)
 - [Filtering events](https://rest-for-physics.github.io/getting-started/filtering-events.html) To be written
 -  [Drawing event data](https://rest-for-physics.github.io/getting-started/drawing-events.html)
 -  [Browsing and viewing events](https://rest-for-physics.github.io/getting-started/browsing-and-viewing-events.html)
