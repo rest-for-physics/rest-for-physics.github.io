@@ -20,7 +20,7 @@ Filtering usually starts from the observables stored in the [`TRestAnalysisTree`
 
 The event object and the analysis tree are connected entry by entry. This means that an observable cut can be used to find interesting entries, and the corresponding REST event can then be loaded, printed, or drawn.
 
-## Choosing A Filtering Method
+## Choosing a filtering method
 
 For quick checks, use the analysis tree directly from `restRoot`:
 
@@ -52,7 +52,7 @@ auto selected = df.Filter("tckAna_MaxTrackEnergy>2000");
 
 For processing pipelines, use a REST event-selection process in the RML configuration.
 
-## Finding Observable Names
+## Finding observable names
 
 Before writing a cut, inspect the observables available in the file:
 
@@ -74,7 +74,7 @@ run->PrintObservables();
 
 Observable names depend on the processes used to create the file. A track file may contain observables such as `tckAna_MaxTrackEnergy`, while a detector-hit analysis may contain position observables such as `hitsAna_xMean` and `hitsAna_yMean`.
 
-## Filtering With ROOT Cuts
+## Filtering with ROOT cuts
 
 Since `TRestAnalysisTree` inherits from ROOT `TTree`, standard ROOT selection strings can be used in `Draw`:
 
@@ -88,7 +88,7 @@ The first argument defines what is drawn. The second argument is the selection. 
 
 This is useful for fast visual checks, but it does not by itself create a new REST file or remove events from the input file.
 
-## Getting Entries From REST Conditions
+## Getting entries from REST conditions
 
 `TRestRun` provides helper methods to translate observable conditions into REST entries or event IDs:
 
@@ -123,7 +123,7 @@ The optional arguments can be used to start searching from a given entry and lim
 auto entries = run->GetEventEntriesWithConditions("tckAna_MaxTrackEnergy>2000", 0, 10);
 ```
 
-## Loading Selected Events
+## Loading selected events
 
 Once the selected entries are known, use `TRestRun::GetEntry` to load the corresponding event and analysis-tree entry:
 
@@ -152,7 +152,7 @@ for (auto id : ids) {
 
 Entry numbers are positions in the file. Event IDs are identifiers stored in the event metadata, and they are not necessarily equal to the entry number.
 
-## Getting The Next Matching Event
+## Getting the next matching event
 
 For interactive inspection, `TRestRun::GetNextEventWithConditions` can be used to step through matching events one by one:
 
@@ -164,7 +164,7 @@ ev->DrawEvent();
 
 Calling the method again advances to the next event that satisfies the condition.
 
-## Checking A Cut On The Current Entry
+## Checking a cut on the current entry
 
 The analysis tree can evaluate a condition on the current entry:
 
@@ -184,7 +184,7 @@ This is useful inside short loops or debugging macros when the event has already
 ana_tree->EvaluateCuts("tckAna_MaxTrackEnergy!=0");
 ```
 
-## Filtering With RDataFrame
+## Filtering with RDataFrame
 
 ROOT `RDataFrame` is useful when the goal is to produce histograms, counts, or derived columns from selected entries:
 
@@ -208,7 +208,7 @@ auto selected = df.Filter("tckAna_MaxTrackEnergy>2000")
 
 This approach is well suited for analysis plots. If the corresponding REST event object is needed for drawing or printing, use the selected entry numbers with `TRestRun` as shown above.
 
-## Filtering During REST Processing
+## Filtering during REST processing
 
 When the goal is to keep or reject events during a REST processing chain, use [`TRestEventSelectionProcess`](https://rest-for-physics.github.io/framework/classTRestEventSelectionProcess.html) ([Sultan mirror](https://sultan.unizar.es/rest/classTRestEventSelectionProcess.html)) in the RML configuration.
 
@@ -222,7 +222,9 @@ For example:
 
 The process can also read event IDs from a text file, or read event IDs from another ROOT file using observable conditions. In a processing chain, make sure that the observables used in the condition have already been produced by earlier processes.
 
-## Common Problems
+<!-- A compact end-to-end example for an event-selection process can be added in a later workflow section once we decide where it belongs in the documentation structure. -->
+
+## Common problems
 
 If a condition returns no entries, first check that the observable exists:
 

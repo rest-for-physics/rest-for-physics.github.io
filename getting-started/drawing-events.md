@@ -5,7 +5,7 @@ parent: Getting started
 nav_order: 30
 ---
 
-# Drawing Event Data
+# Drawing event data
 {: .no_toc }
 
 ### Table of contents
@@ -23,7 +23,7 @@ to inspect event content interactively.
 If you are not sure which event type your file contains, see
 [Data format](/rest-basics/rest-data-format.html).
 
-## Open a File with restRoot
+## Open a file with restRoot
 
 Start an interactive REST session by passing the file name to `restRoot`:
 
@@ -55,7 +55,7 @@ run->GetEntry(10);
 ev->PrintEvent();
 ```
 
-## Draw the Current Event
+## Draw the current event
 
 Most REST event classes implement `DrawEvent()`. After opening a file with
 `restRoot`, draw the current entry with:
@@ -92,7 +92,7 @@ auto signalEvent = run->GetInputEvent<TRestDetectorSignalEvent>();
 signalEvent->DrawEvent();
 ```
 
-## Draw with Event Options
+## Draw with event options
 
 Some event classes accept drawing options. For example, raw signal events
 support options to draw selected channels or only signals passing a threshold
@@ -114,7 +114,7 @@ reference when a specific drawing option is needed:
 - [`TRestDetectorHitsEvent`](https://rest-for-physics.github.io/framework/classTRestDetectorHitsEvent.html)
 - [`TRestTrackEvent`](https://rest-for-physics.github.io/framework/classTRestTrackEvent.html)
 
-## Use the REST Event Viewer
+## Use the REST event viewer
 
 For interactive browsing, use the REST event viewer instead of drawing one
 event manually. From the shell:
@@ -157,7 +157,7 @@ There is also a convenience macro for detector signal events:
 REST_ViewSignalEvent("myFile.root");
 ```
 
-## Draw Analysis Observables
+## Draw analysis observables
 
 Event displays show the event object itself. For scalar or vector observables,
 use the analysis tree:
@@ -182,7 +182,7 @@ This is normal ROOT drawing applied to the REST analysis tree. It is useful for
 quick checks, but it is different from drawing the event object with
 `DrawEvent()`.
 
-## Common Problems
+## Common problems
 
 If `ev` is null, the file may be an analysis-only file without stored event
 objects. In that case, the analysis tree may still be available through

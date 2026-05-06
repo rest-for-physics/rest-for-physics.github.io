@@ -28,7 +28,7 @@ You can launch the macro by typing `.L 1_macro_histograms_example.C` and then ca
 After initializing some variables, we load the data into a `RDataFrame` and extract the timestamps into a `std::vector`:
 
 ```cpp
-ROOT::RDataFrame data("AnalysisTree", "../../data/R01855/R01855_0*root");
+ROOT::RDataFrame data("AnalysisTree", "myFile.root");
 auto result_ts = data.Take<double>("timeStamp");
 vector<double> timestamps = result_ts.GetValue();
 ```

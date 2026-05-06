@@ -23,8 +23,5 @@ In this section, you will find tips for
 Additionally, quick examples for **filtering, drawing, browsing and viewing events** are provided within the [file inspection tips page](https://rest-for-physics.github.io/getting-started/quick-access). 
 
 
-
-
-
 For getting started in python, you can find tutorials [here](https://www.w3schools.com/python/default.asp).
 For a more comprehensive introduction to REST, follow along in the [rest-school github repository](https://github.com/rest-for-physics/rest-school) and from the slides on the [indico site](https://indico.capa.unizar.es/event/26/overview)!

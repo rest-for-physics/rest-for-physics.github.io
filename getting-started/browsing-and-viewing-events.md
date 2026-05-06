@@ -5,7 +5,7 @@ parent: Getting started
 nav_order: 40
 ---
 
-# Browsing and Viewing Events
+# Browsing and viewing events
 {: .no_toc }
 
 ### Table of contents
@@ -24,7 +24,7 @@ moving through the entries stored in a REST file.
 For quick one-event drawing examples, see [Drawing event data](drawing-events.html).
 This page focuses on the interactive browser.
 
-## Starting the Browser
+## Starting the browser
 
 From a shell, use:
 
@@ -41,18 +41,14 @@ REST_ViewEvents("myFile.root");
 Both commands use the REST macro `REST_ViewEvents.C`, which creates a
 `TRestBrowser` and opens the file.
 
-If the command-line executable is not available in your installation, open the
-file with `restRoot` and call the macro from there:
-
-```bash
-restRoot myFile.root
-```
+<!--If the standalone executable is not available in your installation, start a
+`restRoot` session first and then call:
 
 ```cpp
 REST_ViewEvents("myFile.root");
 ```
-
-## Browser Layout
+-->
+## Browser layout
 
 The browser shows the current event on the right and the navigation controls on
 the left.
@@ -77,7 +73,7 @@ The event display uses the event class drawing implementation, usually
 `TRestDetectorSignalEvent` as detector-channel signals, and a `TRestTrackEvent`
 as track projections.
 
-## Selecting Event Types
+## Selecting event types
 
 Some REST files store more than one event representation. For example, a file
 may contain raw signals, detector signals, detector hits, and tracks produced by
@@ -87,7 +83,7 @@ Use the **Event Type** selector to choose which representation to inspect. This
 is useful when checking how one event changes through the processing chain:
 
 ```text
-TRestRawSignalEvent
+  -> TRestRawSignalEvent
   -> TRestDetectorSignalEvent
   -> TRestDetectorHitsEvent
   -> TRestTrackEvent
@@ -106,9 +102,9 @@ For detector signal events, there is a convenience wrapper:
 REST_ViewSignalEvent("myFile.root");
 ```
 
-## Plot Options
+## Plot options
 
-The **Plot Options** box forwards text options to the event drawing method.
+The **plot options** box forwards text options to the event drawing method.
 Available options depend on the event class.
 
 For example, raw signal events support options such as:
@@ -128,7 +124,7 @@ These are interpreted by
 Other event classes have their own drawing behavior and may accept different
 options.
 
-## Terminal Output
+## Terminal output
 
 When the browser loads an event, REST also prints information in the terminal.
 This usually includes the event ID, timestamp, event content summary, and the
@@ -139,7 +135,7 @@ the observables in the analysis tree. For example, while the browser shows a
 track event, the terminal can show the corresponding track, hit, signal, and
 rate observables for the same entry.
 
-## Viewer Processes
+## Viewer processes
 
 REST also provides viewer processes that can be inserted in a processing chain
 to display events while the chain is running. These are useful for debugging a
