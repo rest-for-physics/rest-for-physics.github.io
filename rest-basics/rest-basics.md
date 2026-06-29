@@ -13,6 +13,6 @@ permalink: /rest-basics
 In this section, you will find
 
 - [Code Versioning](https://rest-for-physics.github.io/rest-basics/rest-versioning.html) managed by private members inside `TRestMetadata` and is used to identify the code which generated the data.
-- [Data Format](https://rest-for-physics.github.io/rest-basics/rest-data-format.html) To be written
+- [Data Format](https://rest-for-physics.github.io/rest-basics/rest-data-format.html) introduces REST files, event classes, analysis observables, and the usual flow from raw signals to tracks.
 - [Physics Units](https://rest-for-physics.github.io/rest-basics/physics-units.html) which explains how units are formatted under namespaces `REST_Units` and `REST_Physics`.
 - [Output Levels](https://rest-for-physics.github.io/rest-basics/output-levels.html) To be written
