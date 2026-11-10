@@ -9,7 +9,48 @@ permalink: /installation
 1. TOC
 {:toc}
 
-The instructions in this section will get you a copy of the project up and running on your local machine in your home directory.
+## Guided installation
+
+For Linux or Ubuntu running in Windows Subsystem for Linux (WSL), start with the
+interactive **`install_rest.sh`** installer. It guides you through choosing a REST
+release, an installation directory, libraries and environment setup.
+
+[Full installer guide on GitHub](https://github.com/rest-for-physics/framework/tree/master/scripts/installation#readme){: .btn .btn-blue }
+
+The full guide covers dependency versions, requirements and advanced options.
+
+Download and run it from a terminal:
+
+```bash
+curl -fL \
+  https://raw.githubusercontent.com/rest-for-physics/framework/master/scripts/installation/install_rest.sh \
+  -o install_rest.sh && bash install_rest.sh
+```
+
+**Press Enter at the release prompt to accept the displayed stable release.**
+The installer uses that release's recorded library versions. Choose the mode
+that matches your machine:
+
+| Mode | Use it when |
+|------|-------------|
+| **1 — Existing dependencies** | Your server already provides ROOT, Geant4 and Garfield. Supply the existing environment setup script when asked. |
+| **2 — Build dependencies** | You need to build the dependencies on Ubuntu or WSL. Installing system packages requires `sudo`. |
+| **3 — CVMFS** | Your cluster provides a CERN LCG environment through CVMFS. Supply its `setup.sh` when asked. |
+
+Choose a fresh directory in your own writable space. At the end, you can let the
+installer configure `.bashrc`, or choose **3 — No** to leave it unchanged.
+Follow the printed `source` commands in order to activate the installation in
+your current terminal. These commands load the dependencies and then select your
+new REST installation; they do not rebuild anything. If you leave `.bashrc`
+unchanged, repeat them in each new terminal where you want to use REST.
+
+For native Windows installation without WSL, see
+[REST in Windows]({{ '/installation/windows.html' | relative_url }}).
+
+## Manual installation
+
+The following instructions describe how to configure and compile REST yourself.
+If you used the guided installer, you do not need to repeat these steps.
 
 {: .note } 
 > The instructions found on this page should be common to any system based on UNIX. Check [Windows specific installation instructions here](https://rest-for-physics.github.io/installation/windows.html).
