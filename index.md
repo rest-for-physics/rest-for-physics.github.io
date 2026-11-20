@@ -4,6 +4,7 @@ title: Home
 nav_order: 10
 ---
 
+[Install REST]({{ '/installation' | relative_url }}#guided-installation){: .btn .btn-green .fs-4 .mb-4 .mb-md-0 }
 [GitHub](https://github.com/rest-for-physics){: .btn .btn-blue .fs-4 .mb-4 .mb-md-0 }
 <!--[Forum](http://rest-forum.unizar.es){: .btn .btn-green .fs-4 .mb-4 .mb-md-0 }-->
 [API Documentation](https://sultan.unizar.es/rest){: .btn .btn-purple .fs-4 .mb-4 .mb-md-0 }
