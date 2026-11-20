@@ -28,21 +28,21 @@ curl -fL \
 ```
 
 **Press Enter at the release prompt to accept the displayed stable release.**
-The installer uses that release's recorded library versions. Choose the mode
+The installer uses the library versions included in that release. Choose the mode
 that matches your machine:
 
 | Mode | Use it when |
 |------|-------------|
-| **1 — Existing dependencies** | Your server already provides ROOT, Geant4 and Garfield. Supply the existing environment setup script when asked. |
+| **1 — Existing dependencies** | Your server already provides ROOT, Geant4 and Garfield. Enter the path to its `thisREST.sh` setup script when asked. |
 | **2 — Build dependencies** | You need to build the dependencies on Ubuntu or WSL. Installing system packages requires `sudo`. |
 | **3 — CVMFS** | Your cluster provides a CERN LCG environment through CVMFS. Supply its `setup.sh` when asked. |
 
 Choose a fresh directory in your own writable space. At the end, you can let the
 installer configure `.bashrc`, or choose **3 — No** to leave it unchanged.
-Follow the printed `source` commands in order to activate the installation in
-your current terminal. These commands load the dependencies and then select your
-new REST installation; they do not rebuild anything. If you leave `.bashrc`
-unchanged, repeat them in each new terminal where you want to use REST.
+
+To use REST in your current terminal, run all the commands printed under
+`To activate REST`, in the order shown. If you leave `.bashrc` unchanged, run
+them each time you open a terminal to use REST.
 
 For native Windows installation without WSL, see
 [REST in Windows]({{ '/installation/windows.html' | relative_url }}).
